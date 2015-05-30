@@ -1,0 +1,504 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+
+/* Page layout */
+
+body {
+	line-height: 1.8;
+	background-color: #868d7b;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+#page-wrapper{
+	background-image: url("images/background-repeat.png");
+	background-repeat: repeat-y;
+    background-position: center 355px;
+	background-color: #fff;
+}
+
+#page {
+	background-image: url("images/background-top.png");
+	background-repeat: no-repeat;
+    background-position: center 0px;
+    border-top: 40px solid #868d7b;
+    padding-top: 20px;
+}
+
+#zone-footer-wrapper {
+	background-color: #868d7b;
+	border-top: 10px solid white;
+}
+
+#section-content {
+	margin-bottom: 160px;
+}
+
+.region-footer-first .block {
+	text-align: center;
+	letter-spacing: 200%;
+	margin-top: 40px;
+	margin-bottom: 160px;
+}
+
+/* Other potential colours: 
+#c6cbb4; 
+#bfb879;
+*/
+
+
+/* Fonts and headings */
+
+body {
+	font-family: Domine;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Domine;
+    letter-spacing: 0em; /*reset from Omega*/
+}
+
+h1,
+#block-block-11 h2,
+#block-block-12 h2,
+#block-block-13 h2 {
+	font-family: Tangerine, Cursive;
+	font-size: 80px;
+	line-height: 80px;
+	margin-bottom: 0px;
+}
+
+.node-type-blog h1,
+.node-type-course h1,
+.node-type-product h1,
+.node-type-product-type h1,
+.node-type-events h1,
+ h2.node-title {
+	font-size: 26px;
+	line-height: inherit;
+	font-family: Domine;
+	margin-bottom: 20px;
+}
+
+h1.site-name, h2.site-name {
+	font-family: Tangerine, Cursive;
+	font-size: 125px;
+	text-align: center;
+	margin-top: 0;
+}
+
+.site-name-slogan {
+    float: none;
+}
+
+#region-header-first h2,
+.page-cursos #region-header-first h1,
+.page-productos #region-header-first h1,
+.node-type-basic-page #region-header-first h1,
+.page-blog #region-header-first h1 {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.section-header .site-name-slogan {
+	padding-top: 15px;
+}
+
+
+/* Links */
+
+a:hover {
+    text-decoration: underline;
+}
+
+.site-name a:hover,
+a:link, a:visited {
+	text-decoration:none;
+}
+
+.site-name a:link, .site-name a:visited,
+h2 a:link,h2 a:visited,
+ul.menu a {
+	color: #000;	
+}
+
+ul.menu a.active,
+a:link, 
+a:visited {
+	color: olive;
+}
+
+#zone-footer-wrapper a {
+	color: white;
+}
+
+
+/* Image handling in nodes */
+
+.node p img {
+	display: block;
+    margin: auto;
+}	
+
+.node-basic-page .field-name-field-image .field-item {
+	float: left;
+	margin-bottom: 20px;
+}
+
+.node-basic-page .field-name-field-image .field-item.even {
+	margin-right: 20px;
+}
+
+
+/* Menu */
+
+.menu {
+	font-size: 17px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+}
+
+ul.menu {
+	text-align: center;
+	margin-top: 50px;
+}
+
+ul.menu li {
+	display: inline;
+	padding-right: 2em;
+}
+
+#zone-menu-wrapper {
+	margin-bottom: 20px;
+}
+
+
+/* Footer */
+
+#zone-footer-wrapper p {
+	font-size: 15px;
+	letter-spacing: 4px;
+}
+
+
+/* Sidebar Region */
+
+.region-sidebar-second .block-block-1,
+.region-sidebar-second .block-block-2,
+.region-sidebar-second .block-block-3,
+.region-sidebar-second .block-views-blog-block-2,
+.region-sidebar-second .block-views-blog-block-1 {
+	background-color: #e8eae2;
+	padding: 20px;
+}
+
+.region-sidebar-second .region-inner h2 {
+	font-size: 17px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+}
+
+.region-sidebar-second p {
+	line-height: 220%
+}
+
+.region-sidebar-second .region-inner { 
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 40px;
+} 
+
+.region-sidebar-second .block {
+	margin-bottom: 20px;
+}
+
+.view-dibujos .views-field-field-image,
+.region-sidebar-second #block-block-15 p {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+
+
+/* Home page*/
+
+#block-imageblock-3 .block-body {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 20px 30px;
+    position: absolute;
+    bottom: 0;
+}
+
+#block-imageblock-3 .block-body p {
+	margin-bottom: 0;
+	margin: 10px 0px;
+}
+
+#block-imageblock-3 {
+	position:relative;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#block-block-7 .block-inner,
+#block-block-8 .block-inner,
+#block-block-9 .block-inner {
+	padding: 0px;
+	position: relative;
+}
+
+#block-block-7 .block-title-link,
+#block-block-8 .block-title-link,
+#block-block-9 .block-title-link {
+    background: none repeat scroll 0 0 rgba(80, 80, 0, 0.5);
+    color: white;
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    position: absolute;
+    top: 27px;
+}
+
+#block-block-7 p, 
+#block-block-8 p, 
+#block-block-9 p {
+	margin-bottom: 0px;
+}
+
+
+/* Courses & Products */
+
+	/* - lists of courses and product types */
+
+.view-productos h2,
+.view-cursos h2 {
+	font-size: 22px;
+	padding: 10px 15px;
+	background-color: #9ea58a;
+	margin-bottom: 0px;
+}
+
+.view-productos h2 a,
+.view-cursos h2 a {
+	color: white;
+}
+
+.view-productos .views-row,
+.view-cursos .views-row {
+	margin-bottom: 40px;
+	border: 1px solid #868d7b;
+}
+
+.view-productos .views-field-field-introduction,
+.view-cursos .views-field-field-introduction {
+	font-size: 16px;
+	padding: 20px 30px;
+	height: 125px;
+	line-height:25px;
+	float: left;
+	width: 337px;
+}
+ 
+.view-productos .views-field-field-image,
+.view-cursos .views-field-field-image {
+	width: 220px;
+	float: left;
+}
+
+	/* product type nodes */
+
+.node-product-type .field-name-body {
+	width: 380px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.node-product-type .field-name-field-image,
+#block-views-3cd80dd02254713d56fd33ef90cb5e7d /* Image and product list region in product type node page */ {
+	width: 220px;
+	float: left;
+}
+
+.view-product-list h2 {
+	font-size: 22px;
+	padding: 10px;
+	text-align: center;
+	background-color: #9ea58a;
+	margin-bottom: 0px;
+	color: white;
+}
+
+.view-product-list {
+	border: 1px solid #868d7b;
+	margin-top: 20px;
+}
+
+.view-product-list .view-content .views-row {
+	margin: 20px;
+	line-height: 140%;
+}
+
+.node-product-type .field-name-field-image {
+	margin-bottom: 20px;
+}
+
+
+	/* - course and product nodes */
+
+.node-type-events #block-system-main,
+.node-type-product .block-system-main,
+.node-product-type .field-name-field-introduction {
+	margin-left: 20px;
+	width: 380px;
+	float: left;
+}
+
+#block-views-f283283acb0085e4f704fc17082ebde0 /* Image and price region in product node page */,
+#block-views-imagen-y-precio-del-curso-block {
+	width: 220px;
+	float: left;
+} 
+
+.view-producto-descripcion-y-genero .views-field-field-option,
+.view-imagen-y-precio-del-curso .views-field-field-price,
+.view-course-dates {
+	background-color: #9ea58a;
+	padding: 15px;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 120%;
+}
+
+.view-producto-descripcion-y-genero .views-label-field-option,
+.view-imagen-y-precio-del-curso .views-label-field-price,
+.view-course-dates .view-header {
+	border-bottom: 1px solid white;
+	padding-bottom: 1px;
+	margin-bottom: 3px;
+}
+
+.view-course-dates a {
+	color: black;
+}
+
+.view-producto-descripcion-y-genero .views-field-field-option,
+.view-producto-descripcion-y-genero .views-field-field-product-type,
+.view-imagen-y-precio-del-curso .views-field-field-price,
+.view-imagen-y-precio-del-curso .views-field-field-date {
+	margin-top: 20px;
+}
+
+.view-producto-descripcion-y-genero .field-collection-view,
+.view-imagen-y-precio-del-curso .views-field-field-price .field-content,
+.view-course-dates .view-empty {
+	margin: 15px 0px;
+}
+
+.view-producto-descripcion-y-genero .field-collection-view-final {
+	margin-bottom: 0px;
+}
+
+.field-collection-item-field-option .clearfix:after {
+    clear: none;
+}
+
+.field-collection-item-field-option .field-label {
+	display: none;
+}
+
+.field-name-field-size .field-item {
+    padding-right: 6px;
+}
+
+.field-name-field-size .field-item:after {
+    content: ":";
+}
+
+.view-course-dates {
+	padding-top: 0px;
+}
+
+.view-course-dates .views-field-field-date {
+	padding-bottom: 0px;
+	font-size: 16px;
+}
+
+.view-course-dates .views-field-field-date-1,
+.view-course-dates .view-empty {
+	font-size: 13px;
+}
+
+.view-course-dates .views-field-delete-node,
+.view-course-dates .views-field-edit-node {
+	font-size: 12px;
+}
+
+.block-course-dates-block h2 {
+	font-size: 16px;
+}
+
+.view-course-dates .views-row {
+	text-align: center;
+}
+
+.view-imagen-y-precio-del-curso .views-field-field-price {
+	padding-bottom: 1px;
+}
+
+
+/* Blog */
+
+.view-blog .field-name-body {
+	width: 380px;
+	float: left;
+}
+
+.view-blog .field-name-field-image {
+	width: 220px;
+	float: left;
+}
+
+.view-blog .node-title,
+.node-type-blog #page-title {
+	margin-bottom: 0px;
+}
+
+.view-blog .node-blog .field-name-field-image {
+    padding-bottom: 20px;
+}
+
+.node-blog .field-name-field-image {
+	margin:auto;
+    padding-right: 20px;
+    float: left;
+}
+
+.node-blog .submitted-by {
+	color: grey;
+    display: block;
+    font-size: 90%;
+    margin-bottom: 20px;
+}
+
+.field-type-taxonomy-term-reference .field-item {
+	margin-left: 10px;
+}
+
+.node-links {
+	margin: 20px 0px;
+}
+
+.node-blog .field-name-field-tags {
+	margin-top: 10px;
+}
