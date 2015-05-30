@@ -284,7 +284,7 @@ background: white;
 .view-artist-sponsors .views-field-field-image {
     width: 220px;
 	float: left;
-	margin: 10px 10px 10px 0;
+	margin: 0 10px 10px 0;
 }
 .node-article .field-name-field-image {
 	text-align: center;
