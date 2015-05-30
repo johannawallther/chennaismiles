@@ -1,0 +1,16 @@
+/* TinyMCE Editor CSS */
+
+.floatleft {
+	float: left;
+}
+
+.floatright {
+	float: right;
+}
+
+hr {
+	clear: both;
+	border: 1px solid #ccc;
+	height: 1px;
+	margin: 5px 0 20px 0;
+}
