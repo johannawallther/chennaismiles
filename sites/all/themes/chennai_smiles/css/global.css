@@ -39,6 +39,7 @@ h1 {
 }
 h2 {
 	font-size: 1.4285em; /*20px @14px*/
+	font-weight: normal;
 }
 h3 {
 	font-size: 1.1428em; */16px @14px*/
@@ -49,9 +50,14 @@ h3 {
 	font-weight: 400;
 	letter-spacing: 0.1px;
 }
-/*#block-locale-language-content .content {
-	margin-top: 50px;
-}*/
+.floatleft {
+	float: left;
+	margin: 10px 10px 10px 0;
+}
+.floatright {
+	float: right;
+	margin: 10px 0 10px 10px;
+}
 h2.node-title {
 	font-size: 20px;
 	color: #2B9D40;
@@ -198,18 +204,12 @@ ul.nice-menu-down li {
 .region-footer-first .block-3 p{
 	margin-bottom: 5px;
 }
-/*.region-footer-first {
-	margin-top: 50px;
-}*/
 
-/* Sidebar Region */
+/* General Pages Layout */
 
 .view-sidebar-images img {
 	padding-bottom: 10px;
 }
-
-/* General Pages Layout */
-
 .node-page .field-name-field-image {
 	float: left;
 	padding-right: 20px;
@@ -257,30 +257,25 @@ tr.even:hover td.active,
 tr.odd:hover td.active {
 background: white;
 }
-
+.view-sponsors {
+	text-align: center;
+}
 /* Blog / Artist Profile */
-
-/*.node-article .content,
-.view-artist-sponsors {
-	padding-left: 20px;
-}*/
 
 .view-artist-sponsors h2,
 .view-news .views-field-title {
-	font-size: 1.4285em; /*20px @14px*/
-	color: #2b9d40;
-	padding-bottom: 20px;
-	font-weight: normal;
-	margin-bottom: 0;
+	margin-bottom: 10px;
+}
+.view-artist-sponsors .views-field-title {
+	line-height: 1em;
 }
 .view-artist-sponsors .views-row,
 .view-news .views-row {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	padding-top: 20px;
 	clear: both;
 }
 .view-artist-sponsors .views-row {
-	height: 250px;
+	clear: both;
 }
 .view-artist-sponsors .view-footer {
 	margin-top: 40px;
@@ -289,8 +284,7 @@ background: white;
 .view-artist-sponsors .views-field-field-image {
     width: 220px;
 	float: left;
-	padding-bottom: 20px;
-	padding-right: 20px;
+	margin: 10px 10px 10px 0;
 }
 .node-article .field-name-field-image {
 	text-align: center;
@@ -303,27 +297,21 @@ background: white;
 }
 .node-article .submitted-by,
 .view-news .views-field-created,
-.view-artist-sponsors .views-field-field-tags {
+.view-artist-sponsors .views-field-field-material {
 	color: grey;
     display: block;
     font-size: 90%;
     margin-bottom: 10px;
+}
+.view-artist-sponsors .views-field.views-field-nothing {
+    line-height: 1em;
 }
 .view-news .views-field-view-node {
 	display: inline-block;
 }
 .view-artist-sponsors .views-field-field-tags .field-item {
 	display: inline;
-}
-.node-article .field-type-taxonomy-term-reference .field-item {
-	margin-left: 10px;
-}
-.field-type-taxonomy-term-reference .field-item {
-	margin-right: 10px;
-}
-.node-article .field-name-field-tags {
-	margin-top: 20px;
-}
+}	
 .comment-wrapper {
 	padding-left: 20px;
 }
