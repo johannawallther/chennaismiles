@@ -4,9 +4,9 @@ dependencies[] = token
 dependencies[] = field
 core = 7.x
 
-; Information added by Drupal.org packaging script on 2014-08-17
-version = "7.x-1.0-beta1"
+; Information added by Drupal.org packaging script on 2015-03-11
+version = "7.x-1.0"
 core = "7.x"
 project = "submitted_by"
-datestamp = "1408309729"
+datestamp = "1426100363"
 
