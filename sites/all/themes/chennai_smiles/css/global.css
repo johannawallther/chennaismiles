@@ -136,7 +136,7 @@ a:link a.active {
 }
 .region-branding {
 	border-bottom: 3px solid #2B9D40;
-  }   
+  }
 .zone-content {
 	padding-top: 50px;
 }
@@ -218,7 +218,8 @@ ul.nice-menu-down li {
 
 /* Home page*/
 
-.front #page-title {
+.front #page-title,
+.front #block-system-main {
 	display: none;
 }
 .view-gallery .view-header {
@@ -279,7 +280,7 @@ background: white;
 }
 .view-artist-sponsors .view-footer {
 	margin-top: 40px;
-}	
+}
 .view-news .views-field-field-image,
 .view-artist-sponsors .views-field-field-image {
     width: 220px;
@@ -311,7 +312,7 @@ background: white;
 }
 .view-artist-sponsors .views-field-field-tags .field-item {
 	display: inline;
-}	
+}
 .comment-wrapper {
 	padding-left: 20px;
 }
