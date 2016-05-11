@@ -222,6 +222,9 @@ ul.nice-menu-down li {
 .front #block-system-main {
 	display: none;
 }
+.front form {
+	text-align: center;
+}
 .view-gallery .view-header {
   	background-color: rgba(255,255,255,0.6);
     position: absolute;
