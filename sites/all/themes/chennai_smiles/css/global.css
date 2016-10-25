@@ -319,3 +319,11 @@ background: white;
 .comment-wrapper {
 	padding-left: 20px;
 }
+
+/* Gallery page */
+.view-prize-gallery .views-field-field-image img {
+    display: inline-block;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
