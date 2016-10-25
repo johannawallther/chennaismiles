@@ -321,7 +321,7 @@ background: white;
 }
 
 /* Gallery page */
-.view-prize-gallery .views-field-field-image img {
+.view-prizes .views-field-field-image img {
     display: inline-block;
     float: left;
     margin-bottom: 10px;
