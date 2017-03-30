@@ -44,6 +44,9 @@ h2 {
 h3 {
 	font-size: 1.1428em; */16px @14px*/
 }
+ol {
+	list-style: inside none decimal;
+}
 .nice-menu {
 	font-family: Quicksand;
 	font-size: 16px;
@@ -225,7 +228,7 @@ ul.nice-menu-down li {
 .front form {
 	text-align: center;
 }
-.view-gallery .view-header {
+.view-gallery .blurb {
   	background-color: rgba(255,255,255,0.6);
     position: absolute;
     right: 0px;
