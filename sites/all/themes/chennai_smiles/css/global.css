@@ -228,16 +228,25 @@ ul.nice-menu-down li {
 .front form {
 	text-align: center;
 }
-.view-gallery .blurb {
-  	background-color: rgba(255,255,255,0.6);
+.view-homepage-slide .blurb {
+	bottom: 0;
+	color: #fff;
+	font-size: 42px;
+	font-weight: bold;
+	line-height: 2em;
+	padding: 40px;
+	position: absolute;
+	text-shadow: 0 0 20px #000000;
+  	/*background-color: rgba(255,255,255,0.6);
     position: absolute;
     right: 0px;
     top: 0;
     width: 320px;
     z-index: 3;
-    font-size: 17px;
+    font-size: 24px;
   	height: 400px;
-	padding: 60px 30px 0 30px;
+		padding: 60px 30px 0 30px;
+		line-height: 2em;*/
 }
 
 /* Organisation page */
