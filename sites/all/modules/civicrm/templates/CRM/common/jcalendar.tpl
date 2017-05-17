@@ -1,8 +1,8 @@
 {*
  +--------------------------------------------------------------------+
- | CiviCRM version 4.5                                                |
+ | CiviCRM version 4.7                                                |
  +--------------------------------------------------------------------+
- | Copyright CiviCRM LLC (c) 2004-2014                                |
+ | Copyright CiviCRM LLC (c) 2004-2017                                |
  +--------------------------------------------------------------------+
  | This file is a part of CiviCRM.                                    |
  |                                                                    |
@@ -49,7 +49,8 @@
     {$form.$elementName.html}
 {/if}
 
-{assign var='displayDate' value=$elementId|cat:"_display"}
+{* CRM-15804 - CiviEvent Date Picker broken in modal dialog *}
+{assign var='displayDate' value=$elementId|cat:"_display"|cat:"_$string"|uniqid}
 
 {if $action neq 1028}
     <input type="text" name="{$displayDate}" id="{$displayDate}" class="dateplugin" autocomplete="off"/>
@@ -65,7 +66,7 @@
 {/if}
 
 {if $action neq 1028}
-    <a href="#" class="crm-hover-button crm-clear-link" title="{ts}Clear{/ts}"><span class="icon close-icon"></span></a>
+    <a href="#" class="crm-hover-button crm-clear-link" title="{ts}Clear{/ts}"><i class="crm-i fa-times"></i></a>
 {/if}
 
 <script type="text/javascript">
@@ -74,6 +75,11 @@
       {/literal}
       // Workaround for possible duplicate ids in the dom - select by name instead of id and exclude already initialized widgets
       var $dateElement = $('input[name={$displayDate}].dateplugin:not(.hasDatepicker)');
+      {literal}
+      if (!$dateElement.length) {
+        return;
+      }
+      {/literal}
       {if $timeElement}
         var $timeElement = $dateElement.siblings("#{$timeElement}");
         var time_format = $timeElement.attr('timeFormat');
@@ -125,4 +131,3 @@
 
     {/literal}
 </script>
-

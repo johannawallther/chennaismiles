@@ -29,10 +29,15 @@
         $select = $(this).hide().addClass('rendered');
 
       var validTypesId = [];
+      var usedByFilter = null;
       if (options.groupTypeFilter) {
         matchingUfGroups = ufGroupCollection.subcollection({
           filter: function(ufGroupModel) {
-            return ufGroupModel.checkGroupType(options.groupTypeFilter, options.allowAllSubtypes);
+            //CRM-16915 - filter with module used by the profile
+            if (!$.isEmptyObject(options.usedByFilter)) {
+              usedByFilter = options.usedByFilter;
+            }
+            return ufGroupModel.checkGroupType(options.groupTypeFilter, options.allowAllSubtypes, usedByFilter);
           }
         });
       } else {
@@ -61,7 +66,7 @@
         else {
           civiComponent = 'Contribution';
         }
-        CRM.alert(ts('The selected profile is using a custom field which is not assigned to the '+civiComponent+' being configured.'),ts('Warning'));
+        CRM.alert(ts('The selected profile is using a custom field which is not assigned to the "%1" being configured.', {1: civiComponent}), ts('Warning'));
       }
       var view = new CRM.ProfileSelector.View({
         ufGroupId: $select.val(),
@@ -85,7 +90,8 @@
         groupTypeFilter: $(this).data('groupType'),
         entities: $(this).data('entities'),
         //CRM-15427
-        allowAllSubtypes: $(this).data('default')
+        allowAllSubtypes: $(this).data('default'),
+        usedByFilter: $(this).data('usedfor')
       });
     });
   });
