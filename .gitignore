@@ -1,8 +1,6 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
-sites/*/civicrm.settingsa.php
+
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
-scout-instance.json
-sites/*/civicrm.settings.php
