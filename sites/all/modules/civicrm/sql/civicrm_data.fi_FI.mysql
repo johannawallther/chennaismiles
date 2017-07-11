@@ -577,8 +577,8 @@ INSERT INTO civicrm_state_province (id, country_id, abbreviation, name) VALUES
 (1627, 1010, "T", "Tucuman"),
 (1628, 1014, "1", "Burgenland"),
 (1629, 1014, "2", "Kärnten"),
-(1630, 1014, "3", "Niederosterreich"),
-(1631, 1014, "4", "Oberosterreich"),
+(1630, 1014, "3", "Niederösterreich"),
+(1631, 1014, "4", "Oberösterreich"),
 (1632, 1014, "5", "Salzburg"),
 (1633, 1014, "6", "Steiermark"),
 (1634, 1014, "7", "Tirol"),
@@ -4727,7 +4727,7 @@ VALUES
    ('participant_role'              , 'Osallistujan rooli'                   , 'Integer', 1, 1, 0),
    ('event_type'                    , 'Tapahtuman tyyppi'                         , 'Integer', 1, 1, 0),
    ('contact_view_options'          , 'Kontaktien näyttövaihtoehdot'               , NULL, 1, 1, 1),
-   ('contact_smart_group_display'   , 'Kontaktin Smart-ryhmänäkymä -asetukset'   , NULL, 1, 1, 1),
+   ('contact_smart_group_display'   , 'Contact Smart Group View Options'   , NULL, 1, 1, 1),
    ('contact_edit_options'          , 'Kontaktien muokkausvaihtoehdot'               , NULL, 1, 1, 1),
    ('advanced_search_options'       , 'Kehittyneet hakuvaihtoehdot'            , NULL, 1, 1, 1),
    ('user_dashboard_options'        , 'Käyttäjän kojelaudan vaihtoehdot'             , NULL, 1, 1, 1),
@@ -5063,17 +5063,17 @@ VALUES
 
   (@option_group_id_ceOpt, 'Lisäkentät'              ,   1, 'CustomData', NULL, 0, NULL, 1, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Osoite'                  ,   2, 'Address', NULL, 0, NULL, 2, NULL, 0, 0, 1, NULL, NULL, NULL),
-  (@option_group_id_ceOpt, 'Suositellut viestintätavat',   3, 'CommunicationPreferences', NULL, 0, NULL, 3, NULL, 0, 0, 1, NULL, NULL, NULL),
+  (@option_group_id_ceOpt, 'Yhteydenpitoasetukset',   3, 'CommunicationPreferences', NULL, 0, NULL, 3, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Muistiinpanot'                    ,   4, 'Notes', NULL, 0, NULL, 4, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Demografiset tiedot'             ,   5, 'Demographics', NULL, 0, NULL, 5, NULL, 0, 0, 1, NULL, NULL, NULL),
-  (@option_group_id_ceOpt, 'Tagit ja Ryhmät'          ,   6, 'TagsAndGroups', NULL, 0, NULL, 6, NULL, 0, 0, 1, NULL, NULL, NULL),
+  (@option_group_id_ceOpt, 'Avainsanat ja ryhmät'          ,   6, 'TagsAndGroups', NULL, 0, NULL, 6, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Sähköposti'                    ,   7, 'Email', NULL, 1, NULL, 7, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Puhelin'                    ,   8, 'Phone', NULL, 1, NULL, 8, NULL, 0, 0, 1, NULL, NULL, NULL),
-  (@option_group_id_ceOpt, 'Pikaviesti'        ,   9, 'IM', NULL, 1, NULL, 9, NULL, 0, 0, 1, NULL, NULL, NULL),
+  (@option_group_id_ceOpt, 'Pikaviestin'        ,   9, 'IM', NULL, 1, NULL, 9, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'OpenID'                  ,   10, 'OpenID', NULL, 1, NULL, 10, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Verkkosivu'                  ,   11, 'Website', NULL, 1, NULL, 11, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Etuliite'                   ,   12, 'Prefix', NULL, 2, NULL, 12, NULL, 0, 0, 1, NULL, NULL, NULL),
-  (@option_group_id_ceOpt, 'Muodollinen nimike'             ,   13, 'Formal Title', NULL, 2, NULL, 13, NULL, 0, 0, 1, NULL, NULL, NULL),
+  (@option_group_id_ceOpt, 'Muodollinen titteli'             ,   13, 'Formal Title', NULL, 2, NULL, 13, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Etunimi'               ,   14, 'First Name', NULL, 2, NULL, 14, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Toinen etunimi'              ,   15, 'Middle Name', NULL, 2, NULL, 15, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Sukunimi'                ,   16, 'Last Name', NULL, 2, NULL, 16, NULL, 0, 0, 1, NULL, NULL, NULL),
@@ -5253,7 +5253,7 @@ VALUES
   (@option_group_id_we, 'Textarea', 1, 'Textarea', NULL, 0, NULL, 1, NULL, 0, 1, 1, NULL, NULL, NULL),
   (@option_group_id_we, 'CKEditor', 2, 'CKEditor', NULL, 0, NULL, 2, NULL, 0, 1, 1, NULL, NULL, NULL),
 
-  (@option_group_id_mt, 'Hakujen määrittely',      1, 'Search Builder',      NULL, 0, 0,    1, NULL, 0, 1, 1, NULL, NULL, NULL),
+  (@option_group_id_mt, 'Itse määritelty haku',      1, 'Search Builder',      NULL, 0, 0,    1, NULL, 0, 1, 1, NULL, NULL, NULL),
   (@option_group_id_mt, 'Tuo kontakti',      2, 'Import Contact',      NULL, 0, 0,    2, NULL, 0, 1, 1, NULL, NULL, NULL),
   (@option_group_id_mt, 'Import Activity',     3, 'Import Activity',     NULL, 0, 0,    3, NULL, 0, 1, 1, NULL, NULL, NULL),
   (@option_group_id_mt, 'Tuo maksu', 4, 'Import Contribution', NULL, 0, 0,    4, NULL, 0, 1, 1, NULL, NULL, NULL),
@@ -5896,7 +5896,7 @@ VALUES
     ('Expired',   'Vanhentunut', 'end_date', 'month', 1, null, null, null, 0, 0, 4, 0, 1, 0),
     ('Pending',   'Odottaa', 'join_date', null, null,'join_date',null,null, 0, 0, 5, 0, 1, 1),
     ('Cancelled', 'Cancelled', 'join_date', null, null,'join_date',null,null, 0, 0, 6, 0, 1, 1),
-    ('Deceased',  'Menehtynyt', null, null, null, null, null, null, 0, 1, 7, 0, 1, 1);
+    ('Deceased',  'Kuollut', null, null, null, null, null, null, 0, 1, 7, 0, 1, 1);
 
 
 INSERT INTO `civicrm_preferences_date`
@@ -5904,7 +5904,7 @@ INSERT INTO `civicrm_preferences_date`
 VALUES
   ( 'activityDate'    ,  20, 10, '',    '',  'Date for activities including contributions: receive, receipt, cancel. membership: join, start, renew. case: start, end.'         ),
   ( 'activityDateTime',  20, 10, '',     1,  'Date and time for activity: scheduled. participant: registered.'                                                                  ),
-  ( 'birth'           , 100,  0, '',    '',  'Birth and deceased dates. Only year, month and day fields are supported.'                                                         ),
+  ( 'birth'           , 100,  0, '',    '',  'Synnyin- ja kuolinpäivä. Vain vuosi, kuukausi ja päivä ovat hyväksyttyjä kenttiä.'                                                         ),
   ( 'creditCard'      ,   0, 10, 'M Y', '',  'Month and year only for credit card expiration.'                                                                                  ),
   ( 'custom'          ,  20, 20, '',    '',  'Uses date range passed in by form field. Can pass in a posix date part parameter. Start and end offsets defined here are ignored.'),
   ( 'mailing'         ,   0,  1, '',    '',  'Date and time. Used for scheduling mailings.'                                                                                     ),
@@ -23904,4 +23904,4 @@ INSERT INTO `civicrm_report_instance`
 VALUES
     (  @domainID, 'Survey Details', 'survey/detail', 'Detailed report for canvassing, phone-banking, walk lists or other surveys.', 'access CiviReport', 'a:39:{s:6:"fields";a:2:{s:9:"sort_name";s:1:"1";s:6:"result";s:1:"1";}s:22:"assignee_contact_id_op";s:2:"eq";s:25:"assignee_contact_id_value";s:0:"";s:12:"sort_name_op";s:3:"has";s:15:"sort_name_value";s:0:"";s:17:"street_number_min";s:0:"";s:17:"street_number_max";s:0:"";s:16:"street_number_op";s:3:"lte";s:19:"street_number_value";s:0:"";s:14:"street_name_op";s:3:"has";s:17:"street_name_value";s:0:"";s:15:"postal_code_min";s:0:"";s:15:"postal_code_max";s:0:"";s:14:"postal_code_op";s:3:"lte";s:17:"postal_code_value";s:0:"";s:7:"city_op";s:3:"has";s:10:"city_value";s:0:"";s:20:"state_province_id_op";s:2:"in";s:23:"state_province_id_value";a:0:{}s:13:"country_id_op";s:2:"in";s:16:"country_id_value";a:0:{}s:12:"survey_id_op";s:2:"in";s:15:"survey_id_value";a:0:{}s:12:"status_id_op";s:2:"eq";s:15:"status_id_value";s:1:"1";s:11:"custom_1_op";s:2:"in";s:14:"custom_1_value";a:0:{}s:11:"custom_2_op";s:2:"in";s:14:"custom_2_value";a:0:{}s:17:"custom_3_relative";s:1:"0";s:13:"custom_3_from";s:0:"";s:11:"custom_3_to";s:0:"";s:11:"description";s:75:"Detailed report for canvassing, phone-banking, walk lists or other surveys.";s:13:"email_subject";s:0:"";s:8:"email_to";s:0:"";s:8:"email_cc";s:0:"";s:10:"permission";s:17:"access CiviReport";s:6:"groups";s:0:"";s:9:"domain_id";i:1;}');
 
-UPDATE civicrm_domain SET version = '4.7.19';
+UPDATE civicrm_domain SET version = '4.7.21';

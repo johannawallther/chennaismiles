@@ -577,8 +577,8 @@ INSERT INTO civicrm_state_province (id, country_id, abbreviation, name) VALUES
 (1627, 1010, "T", "Tucuman"),
 (1628, 1014, "1", "Burgenland"),
 (1629, 1014, "2", "Kärnten"),
-(1630, 1014, "3", "Niederosterreich"),
-(1631, 1014, "4", "Oberosterreich"),
+(1630, 1014, "3", "Niederösterreich"),
+(1631, 1014, "4", "Oberösterreich"),
 (1632, 1014, "5", "Salzburg"),
 (1633, 1014, "6", "Steiermark"),
 (1634, 1014, "7", "Tirol"),
@@ -4770,7 +4770,7 @@ VALUES
    ('cg_extend_objects'             , 'Objects a custom group extends to'  , NULL, 1, 1, 0),
    ('paper_size'                    , 'Rozmiar papieru'                         , NULL, 1, 1, 0),
    ('pdf_format'                    , 'PDF Page Format'                    , NULL, 1, 1, 0),
-   ('label_format'                  , 'Mailing Label Format'               , NULL, 1, 1, 0),
+   ('label_format'                  , 'Format etykiet listowych'               , NULL, 1, 1, 0),
    ('activity_contacts'             , 'Activity Contacts'                  , NULL, 1, 1, 1),
    ('account_relationship'          , 'Account Relationship'               , NULL, 1, 1, 0),
    ('event_contacts'                , 'Event Recipients'                   , NULL, 1, 1, 0),
@@ -4914,7 +4914,7 @@ VALUES
    (@option_group_id_act, 'Bulk Email',                         19, 'Bulk Email',         NULL, 1, NULL, 19, 'Bulk Email Sent.',                                                    0, 1, 1, NULL, NULL, NULL),
    (@option_group_id_act, 'Assign Case Role',                   20, 'Assign Case Role', NULL,0, 0, 20, '', 0, 1, 1, @caseCompId, NULL, 'fa-user-plus'),
    (@option_group_id_act, 'Remove Case Role',                   21, 'Remove Case Role', NULL,0, 0, 21, '', 0, 1, 1, @caseCompId, NULL, 'fa-user-times'),
-   (@option_group_id_act, 'Print/Merge Document',               22, 'Print PDF Letter',    NULL, 0, NULL, 22, 'Export letters and other printable documents.',                     0, 1, 1, NULL, NULL, 'fa-file-pdf-o'),
+   (@option_group_id_act, 'Stwórz/wydrukuj dokument',               22, 'Print PDF Letter',    NULL, 0, NULL, 22, 'Export letters and other printable documents.',                     0, 1, 1, NULL, NULL, 'fa-file-pdf-o'),
    (@option_group_id_act, 'Merge Case',                         23, 'Merge Case', NULL, 0,  NULL, 23, '', 0, 1, 1, @caseCompId, NULL , 'fa-compress'),
    (@option_group_id_act, 'Reassigned Case',                    24, 'Reassigned Case', NULL, 0,  NULL, 24, '', 0, 1, 1, @caseCompId, NULL , 'fa-user-circle-o'),
    (@option_group_id_act, 'Link Cases',                         25, 'Link Cases', NULL, 0,  NULL, 25, '', 0, 1, 1, @caseCompId, NULL , 'fa-link'),
@@ -5073,7 +5073,7 @@ VALUES
   (@option_group_id_ceOpt, 'Open ID'                  ,   10, 'OpenID', NULL, 1, NULL, 10, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Strona WWW'                  ,   11, 'Website', NULL, 1, NULL, 11, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Prefiks'                   ,   12, 'Prefix', NULL, 2, NULL, 12, NULL, 0, 0, 1, NULL, NULL, NULL),
-  (@option_group_id_ceOpt, 'Formal Title'             ,   13, 'Formal Title', NULL, 2, NULL, 13, NULL, 0, 0, 1, NULL, NULL, NULL),
+  (@option_group_id_ceOpt, 'Formalny tytuł'             ,   13, 'Formal Title', NULL, 2, NULL, 13, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Imię'               ,   14, 'First Name', NULL, 2, NULL, 14, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Drugie imię'              ,   15, 'Middle Name', NULL, 2, NULL, 15, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_ceOpt, 'Nazwisko'                ,   16, 'Last Name', NULL, 2, NULL, 16, NULL, 0, 0, 1, NULL, NULL, NULL),
@@ -5124,8 +5124,8 @@ VALUES
   (@option_group_id_acConRef, 'Kod pocztowy'     , 8, 'country'       , NULL, 0, NULL, 8, NULL, 0, 0, 1, NULL, NULL, NULL),
 
   (@option_group_id_adOpt, 'Adres'    ,  1, 'street_address', NULL, 0, NULL,  1, NULL, 0, 0, 1, NULL, NULL, NULL),
-  (@option_group_id_adOpt, 'Supplemental Address 1'  ,  2, 'supplemental_address_1', NULL, 0, NULL,  2, NULL, 0, 0, 1, NULL, NULL, NULL),
-  (@option_group_id_adOpt, 'Supplemental Address 2'  ,  3, 'supplemental_address_2', NULL, 0, NULL,  3, NULL, 0, 0, 1, NULL, NULL, NULL),
+  (@option_group_id_adOpt, 'Dodatkowy adres 1'  ,  2, 'supplemental_address_1', NULL, 0, NULL,  2, NULL, 0, 0, 1, NULL, NULL, NULL),
+  (@option_group_id_adOpt, 'Dodatkowy adres 2'  ,  3, 'supplemental_address_2', NULL, 0, NULL,  3, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_adOpt, 'Dodatkowy adres 3'  ,  4, 'supplemental_address_3', NULL, 0, NULL, 4, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_adOpt, 'Miejscowość'              ,  5, 'city'          , NULL, 0, NULL,  5, NULL, 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_adOpt, 'Kod pocztowy' ,  6, 'postal_code'   , NULL, 0, NULL,  6, NULL, 0, 0, 1, NULL, NULL, NULL),
@@ -5896,7 +5896,7 @@ VALUES
     ('Expired',   'Wygasła', 'end_date', 'month', 1, null, null, null, 0, 0, 4, 0, 1, 0),
     ('Pending',   'Oczekuje', 'join_date', null, null,'join_date',null,null, 0, 0, 5, 0, 1, 1),
     ('Cancelled', 'Anulowany', 'join_date', null, null,'join_date',null,null, 0, 0, 6, 0, 1, 1),
-    ('Deceased',  'Deceased', null, null, null, null, null, null, 0, 1, 7, 0, 1, 1);
+    ('Deceased',  'Zmarły', null, null, null, null, null, null, 0, 1, 7, 0, 1, 1);
 
 
 INSERT INTO `civicrm_preferences_date`
@@ -23904,4 +23904,4 @@ INSERT INTO `civicrm_report_instance`
 VALUES
     (  @domainID, 'Survey Details', 'survey/detail', 'Detailed report for canvassing, phone-banking, walk lists or other surveys.', 'access CiviReport', 'a:39:{s:6:"fields";a:2:{s:9:"sort_name";s:1:"1";s:6:"result";s:1:"1";}s:22:"assignee_contact_id_op";s:2:"eq";s:25:"assignee_contact_id_value";s:0:"";s:12:"sort_name_op";s:3:"has";s:15:"sort_name_value";s:0:"";s:17:"street_number_min";s:0:"";s:17:"street_number_max";s:0:"";s:16:"street_number_op";s:3:"lte";s:19:"street_number_value";s:0:"";s:14:"street_name_op";s:3:"has";s:17:"street_name_value";s:0:"";s:15:"postal_code_min";s:0:"";s:15:"postal_code_max";s:0:"";s:14:"postal_code_op";s:3:"lte";s:17:"postal_code_value";s:0:"";s:7:"city_op";s:3:"has";s:10:"city_value";s:0:"";s:20:"state_province_id_op";s:2:"in";s:23:"state_province_id_value";a:0:{}s:13:"country_id_op";s:2:"in";s:16:"country_id_value";a:0:{}s:12:"survey_id_op";s:2:"in";s:15:"survey_id_value";a:0:{}s:12:"status_id_op";s:2:"eq";s:15:"status_id_value";s:1:"1";s:11:"custom_1_op";s:2:"in";s:14:"custom_1_value";a:0:{}s:11:"custom_2_op";s:2:"in";s:14:"custom_2_value";a:0:{}s:17:"custom_3_relative";s:1:"0";s:13:"custom_3_from";s:0:"";s:11:"custom_3_to";s:0:"";s:11:"description";s:75:"Detailed report for canvassing, phone-banking, walk lists or other surveys.";s:13:"email_subject";s:0:"";s:8:"email_to";s:0:"";s:8:"email_cc";s:0:"";s:10:"permission";s:17:"access CiviReport";s:6:"groups";s:0:"";s:9:"domain_id";i:1;}');
 
-UPDATE civicrm_domain SET version = '4.7.19';
+UPDATE civicrm_domain SET version = '4.7.21';
