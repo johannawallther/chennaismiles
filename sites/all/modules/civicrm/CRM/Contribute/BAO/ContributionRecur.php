@@ -55,7 +55,7 @@ class CRM_Contribute_BAO_ContributionRecur extends CRM_Contribute_DAO_Contributi
    * @param array $params
    *   (reference ) an assoc array of name/value pairs.
    *
-   * @return CRM_Contribute_BAO_Contribution
+   * @return \CRM_Contribute_BAO_ContributionRecur|\CRM_Core_Error
    * @todo move hook calls / extended logic to create - requires changing calls to call create not add
    */
   public static function add(&$params) {
@@ -628,7 +628,7 @@ INNER JOIN civicrm_contribution       con ON ( con.id = mp.contribution_id )
    * Add line items for recurring contribution.
    *
    * @param int $recurId
-   * @param $contribution
+   * @param \CRM_Contribute_BAO_Contribution $contribution
    *
    * @return array
    */
@@ -746,7 +746,7 @@ INNER JOIN civicrm_contribution       con ON ( con.id = mp.contribution_id )
   }
 
   /**
-   * @param $form
+   * @param CRM_Core_Form $form
    */
   public static function recurringContribution(&$form) {
     // Recurring contribution fields
@@ -897,11 +897,20 @@ INNER JOIN civicrm_contribution       con ON ( con.id = mp.contribution_id )
    * @return array
    */
   public static function calculateRecurLineItems($recurId, $total_amount, $financial_type_id) {
-    $originalContributionID = CRM_Core_DAO::getFieldValue('CRM_Contribute_DAO_Contribution', $recurId, 'id', 'contribution_recur_id');
-    $lineItems = CRM_Price_BAO_LineItem::getLineItemsByContributionID($originalContributionID);
+    $originalContribution = civicrm_api3('Contribution', 'getsingle', array(
+    'contribution_recur_id' => $recurId,
+    'contribution_test' => '',
+    'options' => ['limit' => 1],
+    'return' => ['id', 'financial_type_id'],
+    ));
+    $lineItems = CRM_Price_BAO_LineItem::getLineItemsByContributionID($originalContribution['id']);
     $lineSets = array();
     if (count($lineItems) == 1) {
       foreach ($lineItems as $index => $lineItem) {
+        if ($lineItem['financial_type_id'] != $originalContribution['financial_type_id']) {
+          // CRM-20685, Repeattransaction produces incorrect Financial Type ID (in specific circumstance) - if number of lineItems = 1, So this conditional will set the financial_type_id as the original if line_item and contribution comes with different data.
+          $financial_type_id = $lineItem['financial_type_id'];
+        }
         if ($financial_type_id) {
           // CRM-17718 allow for possibility of changed financial type ID having been set prior to calling this.
           $lineItem['financial_type_id'] = $financial_type_id;

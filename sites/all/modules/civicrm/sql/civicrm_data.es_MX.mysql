@@ -1168,7 +1168,7 @@ INSERT INTO civicrm_state_province (id, country_id, abbreviation, name) VALUES
 (2237, 1058, "US", "Ústecký kraj"),
 (2238, 1058, "VY", "Vysočina"),
 (2239, 1058, "ZL", "Zlínský kraj"),
-(2240, 1082, "BW", "Baden-Wuerttemberg"),
+(2240, 1082, "BW", "Baden-Württemberg"),
 (2241, 1082, "BY", "Bayern"),
 (2242, 1082, "HB", "Bremen"),
 (2243, 1082, "HH", "Hamburg"),
@@ -1178,12 +1178,12 @@ INSERT INTO civicrm_state_province (id, country_id, abbreviation, name) VALUES
 (2247, 1082, "RP", "Rheinland-Pfalz"),
 (2248, 1082, "SL", "Saarland"),
 (2249, 1082, "SH", "Schleswig-Holstein"),
-(2250, 1082, "BR", "Berlin"),
+(2250, 1082, "BE", "Berlin"),
 (2251, 1082, "BB", "Brandenburg"),
 (2252, 1082, "MV", "Mecklenburg-Vorpommern"),
 (2253, 1082, "SN", "Sachsen"),
 (2254, 1082, "ST", "Sachsen-Anhalt"),
-(2255, 1082, "TH", "Thueringen"),
+(2255, 1082, "TH", "Thüringen"),
 (2256, 1060, "AS", "Ali Sabiah"),
 (2257, 1060, "DI", "Dikhil"),
 (2258, 1060, "DJ", "Djibouti"),
@@ -4383,6 +4383,9 @@ INSERT INTO civicrm_state_province (id, country_id, abbreviation, name) VALUES
 (NULL, 1076, "WF", "Wallis-et-Futuna"),
 (NULL, 1076, "NC", "Nouvelle-Calédonie"),
 
+-- CRM-21532 Add French state/departments
+(NULL, 1076, "52", "Haute-Marne"),
+
 -- Add states for: Barbados and Antigua and Barbuda
 (NULL, 1009, "03", "Saint George"),
 (NULL, 1009, "04", "Saint John"),
@@ -4947,7 +4950,7 @@ VALUES
    (@option_group_id_act, 'Correo Electrónico Masivo',                         19, 'Bulk Email',         NULL, 1, NULL, 19, 'Correo Electrónico Masivo Enviado.',                                                    0, 1, 1, NULL, NULL, NULL),
    (@option_group_id_act, 'Asignar Rol de Caso',                   20, 'Assign Case Role', NULL,0, 0, 20, '', 0, 1, 1, @caseCompId, NULL, 'fa-user-plus'),
    (@option_group_id_act, 'Remover Rol de Caso',                   21, 'Remove Case Role', NULL,0, 0, 21, '', 0, 1, 1, @caseCompId, NULL, 'fa-user-times'),
-   (@option_group_id_act, 'Print/Merge Document',               22, 'Print PDF Letter',    NULL, 0, NULL, 22, 'Export letters and other printable documents.',                     0, 1, 1, NULL, NULL, 'fa-file-pdf-o'),
+   (@option_group_id_act, 'Imprimir / fusionar documento',               22, 'Print PDF Letter',    NULL, 0, NULL, 22, 'Exportar cartas y otros documentos imprimibles.',                     0, 1, 1, NULL, NULL, 'fa-file-pdf-o'),
    (@option_group_id_act, 'Fundir Caso',                         23, 'Merge Case', NULL, 0,  NULL, 23, '', 0, 1, 1, @caseCompId, NULL , 'fa-compress'),
    (@option_group_id_act, 'Reasignar Caso',                    24, 'Reassigned Case', NULL, 0,  NULL, 24, '', 0, 1, 1, @caseCompId, NULL , 'fa-user-circle-o'),
    (@option_group_id_act, 'Enlace de Casos',                         25, 'Link Cases', NULL, 0,  NULL, 25, '', 0, 1, 1, @caseCompId, NULL , 'fa-link'),
@@ -5247,7 +5250,7 @@ VALUES
   (@option_group_id_report, 'Detalles de Contribución y Membresía', 'member/contributionDetail', 'CRM_Report_Form_Member_ContributionDetail', NULL, 0, NULL, 48, 'Detalles de las contribuciones para cada tipo de contribución, más información de las memebresías asociadas para contribuciones las cuales estan registradas como pago por membresía.', 0, 0, 1, @memberCompId, NULL, NULL),
   (@option_group_id_report, 'Informe sobre Contribuciones Periódicas', 'contribute/recur', 'CRM_Report_Form_Contribute_Recur',               NULL, 0, NULL, 49, 'Ofrece información sobre el estado de las contribuciones recurrentes', 0, 0, 1, @contributeCompId, NULL, NULL),
   (@option_group_id_report, 'Resumen de contribuciones recurrentes', 'contribute/recursummary', 'CRM_Report_Form_Contribute_RecurSummary',               NULL, 0, NULL, 49, 'Provides simple summary for each payment instrument for which there are recurring contributions (e.g. Credit Card, Standing Order, Direct Debit, etc., NULL), showing within a given date range.', 0, 0, 1, @contributeCompId, NULL, NULL),
-  (@option_group_id_report, 'Deferred Revenue Details', 'contribute/deferredrevenue', 'CRM_Report_Form_Contribute_DeferredRevenue', NULL, 0, NULL, 50, 'Deferred Revenue Details Report', 0, 0, 1, @contributeCompId, NULL, NULL),
+  (@option_group_id_report, 'Detalles de ingresos diferidos', 'contribute/deferredrevenue', 'CRM_Report_Form_Contribute_DeferredRevenue', NULL, 0, NULL, 50, 'Informe de detalles de ingresos diferidos', 0, 0, 1, @contributeCompId, NULL, NULL),
 
   (@option_group_id_acs, 'Programado',    1, 'Scheduled',    NULL, 0, 1,    1, NULL, 0, 1, 1, NULL, NULL, NULL),
   (@option_group_id_acs, 'Completado',    2, 'Completed',    NULL, 1, NULL, 2, NULL, 0, 1, 1, NULL, NULL, NULL),
@@ -5493,7 +5496,7 @@ VALUES
      (@option_group_id_arel, 'Cuenta de descuentos es', 9, 'Discounts Account is', NULL, 0, 0, 9, 'Discounts Account is', 0, 1, 1, 2, NULL, NULL),
      (@option_group_id_arel, 'Cuenta de impuesto sobre ventas es ', 10, 'Sales Tax Account is', NULL, 0, 0, 10, 'Sales Tax Account is', 0, 1, 1, 2, NULL, NULL),
      (@option_group_id_arel, 'Cuenta de devolución es', 11, 'Chargeback Account is', NULL, 0, 0, 11, 'Chargeback Account is', 0, 1, 1, 2, NULL, NULL),
-     (@option_group_id_arel, 'Deferred Revenue Account is', 12, 'Deferred Revenue Account is', NULL, 0, 0, 12, 'Deferred Revenue Account is', 0, 1, 1, 2, NULL, NULL),
+     (@option_group_id_arel, 'La Cuenta de Ingresos Diferidos es', 12, 'Deferred Revenue Account is', NULL, 0, 0, 12, 'Deferred Revenue Account is', 0, 1, 1, 2, NULL, NULL),
 
 -- event_contacts
    (@option_group_id_ere, 'Rol del Participante', 1, 'participant_role', NULL, 0, NULL, 1, NULL, 0, 0, 1, NULL, NULL, NULL),
@@ -5671,8 +5674,8 @@ VALUES
   ( 'Inventario de obsequios'   , @contactID, @opAsset, 'Account representing value of premiums inventory', '1375', 'OCASSET', 0, 1, 0, 0 ),
   ( 'Descuentos'            , @contactID, @opval, 'Contra-revenue account for amounts discounted from sales', '4900', 'INC', 0, 1, 0, 0 ),
   ( 'Cuenta de procesador de pagos', @contactID, @opAsset, 'Account to record payments into a payment processor merchant account', '1150', 'BANK', 0, 1, 0, 0),
-  ( 'Deferred Revenue - Event Fee', @contactID, @opLiability, 'Event revenue to be recognized in future months when the events occur', '2730', 'OCLIAB', 0, 1, 0, 0),
-  ( 'Deferred Revenue - Member Dues', @contactID, @opLiability, 'Membership revenue to be recognized in future months', '2740', 'OCLIAB', 0, 1, 0, 0
+  ( 'Ingresos diferidos - Cargo por evento', @contactID, @opLiability, 'Event revenue to be recognized in future months when the events occur', '2730', 'OCLIAB', 0, 1, 0, 0),
+  ( 'Ingresos Diferidos - Cuotas de Miembros', @contactID, @opLiability, 'Membership revenue to be recognized in future months', '2740', 'OCLIAB', 0, 1, 0, 0
 );
 
 -- Now insert option values which require domainID
@@ -6298,7 +6301,8 @@ INSERT INTO civicrm_mailing_bounce_pattern
     (@bounceTypeID, 'has a policy that( [^ ]*)? prohibited the mail that you sent'),
     (@bounceTypeID, 'is likely unsolicited mail'),
     (@bounceTypeID, 'Local Policy Violation'),
-    (@bounceTypeID, 'ni bilo mogo..?e dostaviti zaradi varnostnega pravilnika');
+    (@bounceTypeID, 'ni bilo mogo..?e dostaviti zaradi varnostnega pravilnika'),
+    (@bounceTypeID, 'abuse report');
 
 INSERT INTO civicrm_mailing_bounce_type
         (name, description, hold_threshold)
@@ -23053,8 +23057,8 @@ SELECT @financial_account_id_ap        := max(id) FROM civicrm_financial_account
 SELECT @financial_account_id_ar        := max(id) FROM civicrm_financial_account WHERE name = 'Cuenta de Depósito bancario';
 SELECT @financial_account_id_pp        := max(id) FROM civicrm_financial_account WHERE name = 'Cuenta de procesador de pagos';
 SELECT @financial_account_id_pr        := max(id) FROM civicrm_financial_account WHERE name = 'Premio';
-SELECT @financial_account_id_dref      := max(id) FROM civicrm_financial_account WHERE name = 'Deferred Revenue - Event Fee';
-SELECT @financial_account_id_drmd      := max(id) FROM civicrm_financial_account WHERE name = 'Deferred Revenue - Member Dues';
+SELECT @financial_account_id_dref      := max(id) FROM civicrm_financial_account WHERE name = 'Ingresos diferidos - Cargo por evento';
+SELECT @financial_account_id_drmd      := max(id) FROM civicrm_financial_account WHERE name = 'Ingresos Diferidos - Cuotas de Miembros';
 
 INSERT INTO `civicrm_entity_financial_account`
      ( entity_table, entity_id, account_relationship, financial_account_id )
@@ -23948,4 +23952,4 @@ INSERT INTO `civicrm_report_instance`
 VALUES
     (  @domainID, 'Survey Details', 'survey/detail', 'Detailed report for canvassing, phone-banking, walk lists or other surveys.', 'access CiviReport', 'a:39:{s:6:"fields";a:2:{s:9:"sort_name";s:1:"1";s:6:"result";s:1:"1";}s:22:"assignee_contact_id_op";s:2:"eq";s:25:"assignee_contact_id_value";s:0:"";s:12:"sort_name_op";s:3:"has";s:15:"sort_name_value";s:0:"";s:17:"street_number_min";s:0:"";s:17:"street_number_max";s:0:"";s:16:"street_number_op";s:3:"lte";s:19:"street_number_value";s:0:"";s:14:"street_name_op";s:3:"has";s:17:"street_name_value";s:0:"";s:15:"postal_code_min";s:0:"";s:15:"postal_code_max";s:0:"";s:14:"postal_code_op";s:3:"lte";s:17:"postal_code_value";s:0:"";s:7:"city_op";s:3:"has";s:10:"city_value";s:0:"";s:20:"state_province_id_op";s:2:"in";s:23:"state_province_id_value";a:0:{}s:13:"country_id_op";s:2:"in";s:16:"country_id_value";a:0:{}s:12:"survey_id_op";s:2:"in";s:15:"survey_id_value";a:0:{}s:12:"status_id_op";s:2:"eq";s:15:"status_id_value";s:1:"1";s:11:"custom_1_op";s:2:"in";s:14:"custom_1_value";a:0:{}s:11:"custom_2_op";s:2:"in";s:14:"custom_2_value";a:0:{}s:17:"custom_3_relative";s:1:"0";s:13:"custom_3_from";s:0:"";s:11:"custom_3_to";s:0:"";s:11:"description";s:75:"Detailed report for canvassing, phone-banking, walk lists or other surveys.";s:13:"email_subject";s:0:"";s:8:"email_to";s:0:"";s:8:"email_cc";s:0:"";s:10:"permission";s:17:"access CiviReport";s:6:"groups";s:0:"";s:9:"domain_id";i:1;}');
 
-UPDATE civicrm_domain SET version = '4.7.29';
+UPDATE civicrm_domain SET version = '4.7.31';
