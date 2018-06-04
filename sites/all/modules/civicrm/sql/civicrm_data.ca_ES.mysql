@@ -1,7 +1,7 @@
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -297,7 +297,7 @@ INSERT INTO civicrm_country (id, name,iso_code,region_id,is_province_abbreviated
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -4405,11 +4405,22 @@ INSERT INTO civicrm_state_province (id, country_id, abbreviation, name) VALUES
 (NULL, 1018, "08", "Saint Michael"),
 (NULL, 1018, "09", "Saint Peter"),
 (NULL, 1018, "10", "Saint Philip"),
-(NULL, 1018, "11", "Saint Thomas");
+(NULL, 1018, "11", "Saint Thomas"),
+
+-- CRM-21837 - Missing states for Gabon
+(NULL, 1080, "01", "Estuaire"),
+(NULL, 1080, "02", "Haut-Ogooué"),
+(NULL, 1080, "03", "Moyen-Ogooué"),
+(NULL, 1080, "04", "Ngounié"),
+(NULL, 1080, "05", "Nyanga"),
+(NULL, 1080, "06", "Ogooué-Ivindo"),
+(NULL, 1080, "07", "Ogooué-Lolo"),
+(NULL, 1080, "08", "Ogooué-Maritime"),
+(NULL, 1080, "09", "Woleu-Ntem");
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -4619,11 +4630,10 @@ INSERT INTO civicrm_currency (id, name, symbol, numeric_code, full_name) VALUES
 (183, "YER",  "﷼", "886", "Yemeni Rial"),
 (184, "ZMK", NULL, "894", "Zambian Kwacha"),
 (185, "ZWD", "Z$", "716", "Zimbabwe Dollar");
-
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -6462,7 +6472,7 @@ INSERT INTO `civicrm_contact_type`
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -6502,7 +6512,7 @@ INSERT INTO civicrm_option_group
 
 INSERT INTO civicrm_option_value
   (option_group_id,        name,       label,   value,                                  weight) VALUES
-      (@tpl_ogid_case, 'case_activity', 'Casos - Enviar una còpia d\'una activitat',            1, 1) ,      (@tpl_ogid_contribution, 'contribution_dupalert', 'Contribucions - Alerta d\'organització duplicada ',            1, 1) ,      (@tpl_ogid_contribution, 'contribution_offline_receipt', 'Contribucions -  Rebut (off-line)',            2, 2) ,      (@tpl_ogid_contribution, 'contribution_online_receipt', 'Contribucions - Rebut (on-line)',            3, 3) ,      (@tpl_ogid_contribution, 'contribution_invoice_receipt', 'Contribucions - Factures',            4, 4) ,      (@tpl_ogid_contribution, 'contribution_recurring_notify', 'Contribucions - Notificació de començament i finalització recurrent ',            5, 5) ,      (@tpl_ogid_contribution, 'contribution_recurring_cancelled', 'Contribucions - Notificació de cancel·lació periòdica',            6, 6) ,      (@tpl_ogid_contribution, 'contribution_recurring_billing', 'Contribucions - Actualitzacions de facturació periòdica',            7, 7) ,      (@tpl_ogid_contribution, 'contribution_recurring_edit', 'Contribucions - Actualitzacions periòdiques ',            8, 8) ,      (@tpl_ogid_contribution, 'pcp_notify', 'Pàgines de campanya personal - Notificació d\'adminsitració',            9, 9) ,      (@tpl_ogid_contribution, 'pcp_status_change', 'Pàgines de campanya personal - Notificació de canvi d\'estat de col·laborador ',            10, 10) ,      (@tpl_ogid_contribution, 'pcp_supporter_notify', 'Pàgines de campanya personal - Benvinguda al col·laborador',            11, 11) ,      (@tpl_ogid_contribution, 'pcp_owner_notify', 'Personal Campaign Pages - Owner Notification',            12, 12) ,      (@tpl_ogid_contribution, 'payment_or_refund_notification', 'Additional Payment Receipt or Refund Notification',            13, 13) ,      (@tpl_ogid_event, 'event_offline_receipt', 'Esdeveniments - Rebut i confirmació d\'inscripció (off-line)',            1, 1) ,      (@tpl_ogid_event, 'event_online_receipt', 'Esdeveniments - Rebut i confirmació d\'incripció (on-line)',            2, 2) ,      (@tpl_ogid_event, 'event_registration_receipt', 'Esdeveniments - rebuts únicament ',            3, 3) ,      (@tpl_ogid_event, 'participant_cancelled', 'Esdeveniments - Notificació de cancel·lació d\'incripció',            4, 4) ,      (@tpl_ogid_event, 'participant_confirm', 'Esdeveniments - Invitació a confirmació d\'inscripció ',            5, 5) ,      (@tpl_ogid_event, 'participant_expired', 'Esdeveniments - Notícia d\'expiració d\'inscripció pendent',            6, 6) ,      (@tpl_ogid_event, 'participant_transferred', 'Events - Registration Transferred Notice',            7, 7) ,      (@tpl_ogid_friend, 'friend', 'Correu electrònic per a dir a un amic',            1, 1) ,      (@tpl_ogid_membership, 'membership_offline_receipt', 'Pertinences - Rebuts d\'inscripció i renovació (off-line)',            1, 1) ,      (@tpl_ogid_membership, 'membership_online_receipt', 'Pertinences - Rebut (on-line)',            2, 2) ,      (@tpl_ogid_membership, 'membership_autorenew_cancelled', 'Membresies - Notificació de cancel·lació de renovació automàtica',            3, 3) ,      (@tpl_ogid_membership, 'membership_autorenew_billing', 'Pertinences - Actualitzacions de facturació de renovació automàtica',            4, 4) ,      (@tpl_ogid_meta, 'test_preview', 'Pàgina de proves - Encapçalament de rebut',            1, 1) ,      (@tpl_ogid_pledge, 'pledge_acknowledge', 'Promeses - Reconeixement',            1, 1) ,      (@tpl_ogid_pledge, 'pledge_reminder', 'Promeses - Recordatori de pagament',            2, 2) ,      (@tpl_ogid_uf, 'uf_notify', 'Perfils - Administració de notificació',            1, 1) ,      (@tpl_ogid_petition, 'petition_sign', 'Petició - Signatura afegida ',            1, 1) ,      (@tpl_ogid_petition, 'petition_confirmation_needed', 'Petició - es necessita verificació ',            2, 2) ;
+      (@tpl_ogid_case, 'case_activity', 'Casos - Enviar una còpia d\'una activitat',            1, 1) ,      (@tpl_ogid_contribution, 'contribution_dupalert', 'Contribucions - Alerta d\'organització duplicada ',            1, 1) ,      (@tpl_ogid_contribution, 'contribution_offline_receipt', 'Contribucions -  Rebut (fora de línia)',            2, 2) ,      (@tpl_ogid_contribution, 'contribution_online_receipt', 'Contribucions - Rebut (en línia)',            3, 3) ,      (@tpl_ogid_contribution, 'contribution_invoice_receipt', 'Contribucions - Factura',            4, 4) ,      (@tpl_ogid_contribution, 'contribution_recurring_notify', 'Contribucions periòdiques - Notificació de començament i finalització',            5, 5) ,      (@tpl_ogid_contribution, 'contribution_recurring_cancelled', 'Contribucions periòdiques - Notificació de cancel·lació',            6, 6) ,      (@tpl_ogid_contribution, 'contribution_recurring_billing', 'Contribucions periòdiques - Actualitzacions de facturació',            7, 7) ,      (@tpl_ogid_contribution, 'contribution_recurring_edit', 'Contribucions periòdiques - Actualitzacions',            8, 8) ,      (@tpl_ogid_contribution, 'pcp_notify', 'Pàgines de campanya personal - Notificació d\'adminsitració',            9, 9) ,      (@tpl_ogid_contribution, 'pcp_status_change', 'Pàgines de campanya personal - Notificació de canvi d\'estat de col·laborador ',            10, 10) ,      (@tpl_ogid_contribution, 'pcp_supporter_notify', 'Pàgines de campanya personal - Benvinguda al col·laborador',            11, 11) ,      (@tpl_ogid_contribution, 'pcp_owner_notify', 'Personal Campaign Pages - Owner Notification',            12, 12) ,      (@tpl_ogid_contribution, 'payment_or_refund_notification', 'Additional Payment Receipt or Refund Notification',            13, 13) ,      (@tpl_ogid_event, 'event_offline_receipt', 'Esdeveniments - Rebut i confirmació d\'inscripció (fora de línia)',            1, 1) ,      (@tpl_ogid_event, 'event_online_receipt', 'Esdeveniments - Rebut i confirmació d\'incripció (en línia)',            2, 2) ,      (@tpl_ogid_event, 'event_registration_receipt', 'Esdeveniments - rebuts únicament ',            3, 3) ,      (@tpl_ogid_event, 'participant_cancelled', 'Esdeveniments - Notificació de cancel·lació d\'incripció',            4, 4) ,      (@tpl_ogid_event, 'participant_confirm', 'Esdeveniments - Invitació a confirmació d\'inscripció ',            5, 5) ,      (@tpl_ogid_event, 'participant_expired', 'Esdeveniments - Notícia d\'expiració d\'inscripció pendent',            6, 6) ,      (@tpl_ogid_event, 'participant_transferred', 'Events - Registration Transferred Notice',            7, 7) ,      (@tpl_ogid_friend, 'friend', 'Correu electrònic per a dir a un amic',            1, 1) ,      (@tpl_ogid_membership, 'membership_offline_receipt', 'Pertinences - Rebuts d\'inscripció i renovació (fora de línia)',            1, 1) ,      (@tpl_ogid_membership, 'membership_online_receipt', 'Pertinences - Rebut (en línia)',            2, 2) ,      (@tpl_ogid_membership, 'membership_autorenew_cancelled', 'Membresies - Notificació de cancel·lació de renovació automàtica',            3, 3) ,      (@tpl_ogid_membership, 'membership_autorenew_billing', 'Pertinences - Actualitzacions de facturació de renovació automàtica',            4, 4) ,      (@tpl_ogid_meta, 'test_preview', 'Pàgina de proves - Encapçalament de rebut',            1, 1) ,      (@tpl_ogid_pledge, 'pledge_acknowledge', 'Promeses - Reconeixement',            1, 1) ,      (@tpl_ogid_pledge, 'pledge_reminder', 'Promeses - Recordatori de pagament',            2, 2) ,      (@tpl_ogid_uf, 'uf_notify', 'Perfils - Administració de notificació',            1, 1) ,      (@tpl_ogid_petition, 'petition_sign', 'Petició - Signatura afegida ',            1, 1) ,      (@tpl_ogid_petition, 'petition_confirmation_needed', 'Petició - es necessita verificació ',            2, 2) ;
     SELECT @tpl_ovid_case_activity := MAX(id) FROM civicrm_option_value WHERE option_group_id = @tpl_ogid_case AND name = 'case_activity';
     SELECT @tpl_ovid_contribution_dupalert := MAX(id) FROM civicrm_option_value WHERE option_group_id = @tpl_ogid_contribution AND name = 'contribution_dupalert';
     SELECT @tpl_ovid_contribution_offline_receipt := MAX(id) FROM civicrm_option_value WHERE option_group_id = @tpl_ogid_contribution AND name = 'contribution_offline_receipt';
@@ -7043,7 +7053,7 @@ INSERT INTO civicrm_msg_template
 ', @tpl_ovid_contribution_dupalert, 0,          1) ,      
       
       
-      ('Contribucions -  Rebut (off-line)', '{ts}Contribution Receipt{/ts}
+      ('Contribucions -  Rebut (fora de línia)', '{ts}Contribution Receipt{/ts}
 ', '{if $formValues.receipt_text}
 {$formValues.receipt_text}
 {else}{ts}Thank you for your support.{/ts}{/if}
@@ -7482,7 +7492,7 @@ INSERT INTO civicrm_msg_template
 </body>
 </html>
 ', @tpl_ovid_contribution_offline_receipt, 1,          0),
-      ('Contribucions -  Rebut (off-line)', '{ts}Contribution Receipt{/ts}
+      ('Contribucions -  Rebut (fora de línia)', '{ts}Contribution Receipt{/ts}
 ', '{if $formValues.receipt_text}
 {$formValues.receipt_text}
 {else}{ts}Thank you for your support.{/ts}{/if}
@@ -7923,7 +7933,7 @@ INSERT INTO civicrm_msg_template
 ', @tpl_ovid_contribution_offline_receipt, 0,          1) ,      
       
       
-      ('Contribucions - Rebut (on-line)', '{if $is_pay_later}{ts}Invoice{/ts}{else}{ts}Receipt{/ts}{/if} - {$title}
+      ('Contribucions - Rebut (en línia)', '{if $is_pay_later}{ts}Invoice{/ts}{else}{ts}Receipt{/ts}{/if} - {$title}
 ', '{if $receipt_text}
 {$receipt_text}
 {/if}
@@ -8606,7 +8616,7 @@ INSERT INTO civicrm_msg_template
 </body>
 </html>
 ', @tpl_ovid_contribution_online_receipt, 1,          0),
-      ('Contribucions - Rebut (on-line)', '{if $is_pay_later}{ts}Invoice{/ts}{else}{ts}Receipt{/ts}{/if} - {$title}
+      ('Contribucions - Rebut (en línia)', '{if $is_pay_later}{ts}Invoice{/ts}{else}{ts}Receipt{/ts}{/if} - {$title}
 ', '{if $receipt_text}
 {$receipt_text}
 {/if}
@@ -9291,7 +9301,7 @@ INSERT INTO civicrm_msg_template
 ', @tpl_ovid_contribution_online_receipt, 0,          1) ,      
       
       
-      ('Contribucions - Factures', '{if $title}
+      ('Contribucions - Factura', '{if $title}
   {if $component}
     {if $component == \'event\'}
       {ts 1=$title}Event Registration Invoice: %1{/ts}
@@ -9762,7 +9772,7 @@ INSERT INTO civicrm_msg_template
   </body>
 </html>
 ', @tpl_ovid_contribution_invoice_receipt, 1,          0),
-      ('Contribucions - Factures', '{if $title}
+      ('Contribucions - Factura', '{if $title}
   {if $component}
     {if $component == \'event\'}
       {ts 1=$title}Event Registration Invoice: %1{/ts}
@@ -10235,7 +10245,7 @@ INSERT INTO civicrm_msg_template
 ', @tpl_ovid_contribution_invoice_receipt, 0,          1) ,      
       
       
-      ('Contribucions - Notificació de començament i finalització recurrent ', '{ts}Recurring Contribution Notification{/ts}
+      ('Contribucions periòdiques - Notificació de començament i finalització', '{ts}Recurring Contribution Notification{/ts}
 ', '{ts 1=$displayName}Dear %1{/ts},
 
 {if $recur_txnType eq \'START\'}
@@ -10420,7 +10430,7 @@ INSERT INTO civicrm_msg_template
 </body>
 </html>
 ', @tpl_ovid_contribution_recurring_notify, 1,          0),
-      ('Contribucions - Notificació de començament i finalització recurrent ', '{ts}Recurring Contribution Notification{/ts}
+      ('Contribucions periòdiques - Notificació de començament i finalització', '{ts}Recurring Contribution Notification{/ts}
 ', '{ts 1=$displayName}Dear %1{/ts},
 
 {if $recur_txnType eq \'START\'}
@@ -10607,7 +10617,7 @@ INSERT INTO civicrm_msg_template
 ', @tpl_ovid_contribution_recurring_notify, 0,          1) ,      
       
       
-      ('Contribucions - Notificació de cancel·lació periòdica', '{ts}Recurring Contribution Cancellation Notification{/ts}
+      ('Contribucions periòdiques - Notificació de cancel·lació', '{ts}Recurring Contribution Cancellation Notification{/ts}
 ', '{ts 1=$contact.display_name}Dear %1{/ts},
 
 {ts 1=$amount 2=$recur_frequency_interval 3=$recur_frequency_unit}Your recurring contribution of %1, every %2 %3 has been cancelled as requested.{/ts}
@@ -10645,7 +10655,7 @@ INSERT INTO civicrm_msg_template
 </body>
 </html>
 ', @tpl_ovid_contribution_recurring_cancelled, 1,          0),
-      ('Contribucions - Notificació de cancel·lació periòdica', '{ts}Recurring Contribution Cancellation Notification{/ts}
+      ('Contribucions periòdiques - Notificació de cancel·lació', '{ts}Recurring Contribution Cancellation Notification{/ts}
 ', '{ts 1=$contact.display_name}Dear %1{/ts},
 
 {ts 1=$amount 2=$recur_frequency_interval 3=$recur_frequency_unit}Your recurring contribution of %1, every %2 %3 has been cancelled as requested.{/ts}
@@ -10685,7 +10695,7 @@ INSERT INTO civicrm_msg_template
 ', @tpl_ovid_contribution_recurring_cancelled, 0,          1) ,      
       
       
-      ('Contribucions - Actualitzacions de facturació periòdica', '{ts}Recurring Contribution Billing Updates{/ts}', '{ts 1=$contact.display_name}Dear %1{/ts},
+      ('Contribucions periòdiques - Actualitzacions de facturació', '{ts}Recurring Contribution Billing Updates{/ts}', '{ts 1=$contact.display_name}Dear %1{/ts},
 
 {ts 1=$amount 2=$recur_frequency_interval 3=$recur_frequency_unit}Billing details for your recurring contribution of %1, every %2 %3 have been updated.{/ts}
 
@@ -10772,7 +10782,7 @@ INSERT INTO civicrm_msg_template
 
 </body>
 </html>', @tpl_ovid_contribution_recurring_billing, 1,          0),
-      ('Contribucions - Actualitzacions de facturació periòdica', '{ts}Recurring Contribution Billing Updates{/ts}', '{ts 1=$contact.display_name}Dear %1{/ts},
+      ('Contribucions periòdiques - Actualitzacions de facturació', '{ts}Recurring Contribution Billing Updates{/ts}', '{ts 1=$contact.display_name}Dear %1{/ts},
 
 {ts 1=$amount 2=$recur_frequency_interval 3=$recur_frequency_unit}Billing details for your recurring contribution of %1, every %2 %3 have been updated.{/ts}
 
@@ -10861,7 +10871,7 @@ INSERT INTO civicrm_msg_template
 </html>', @tpl_ovid_contribution_recurring_billing, 0,          1) ,      
       
       
-      ('Contribucions - Actualitzacions periòdiques ', '{ts}Recurring Contribution Update Notification{/ts}', '{ts 1=$contact.display_name}Dear %1{/ts},
+      ('Contribucions periòdiques - Actualitzacions', '{ts}Recurring Contribution Update Notification{/ts}', '{ts 1=$contact.display_name}Dear %1{/ts},
 
 {ts}Your recurring contribution has been updated as requested:{/ts}
 
@@ -10905,7 +10915,7 @@ INSERT INTO civicrm_msg_template
 </body>
 </html>
 ', @tpl_ovid_contribution_recurring_edit, 1,          0),
-      ('Contribucions - Actualitzacions periòdiques ', '{ts}Recurring Contribution Update Notification{/ts}', '{ts 1=$contact.display_name}Dear %1{/ts},
+      ('Contribucions periòdiques - Actualitzacions', '{ts}Recurring Contribution Update Notification{/ts}', '{ts 1=$contact.display_name}Dear %1{/ts},
 
 {ts}Your recurring contribution has been updated as requested:{/ts}
 
@@ -12531,7 +12541,7 @@ INSERT INTO civicrm_msg_template
 ', @tpl_ovid_payment_or_refund_notification, 0,          1) ,      
       
       
-      ('Esdeveniments - Rebut i confirmació d\'inscripció (off-line)', '{ts}Event Confirmation{/ts} - {$event.title}
+      ('Esdeveniments - Rebut i confirmació d\'inscripció (fora de línia)', '{ts}Event Confirmation{/ts} - {$event.title}
 ', '{contact.email_greeting}
 {if $event.confirm_email_text AND (not $isOnWaitlist AND not $isRequireApproval)}
 {$event.confirm_email_text}
@@ -13338,7 +13348,7 @@ INSERT INTO civicrm_msg_template
 </body>
 </html>
 ', @tpl_ovid_event_offline_receipt, 1,          0),
-      ('Esdeveniments - Rebut i confirmació d\'inscripció (off-line)', '{ts}Event Confirmation{/ts} - {$event.title}
+      ('Esdeveniments - Rebut i confirmació d\'inscripció (fora de línia)', '{ts}Event Confirmation{/ts} - {$event.title}
 ', '{contact.email_greeting}
 {if $event.confirm_email_text AND (not $isOnWaitlist AND not $isRequireApproval)}
 {$event.confirm_email_text}
@@ -14147,7 +14157,7 @@ INSERT INTO civicrm_msg_template
 ', @tpl_ovid_event_offline_receipt, 0,          1) ,      
       
       
-      ('Esdeveniments - Rebut i confirmació d\'incripció (on-line)', '{if $isOnWaitlist}{ts}Wait List Confirmation{/ts}{else}{ts}Registration Confirmation{/ts}{/if} - {$event.event_title}', '{contact.email_greeting},
+      ('Esdeveniments - Rebut i confirmació d\'incripció (en línia)', '{if $isOnWaitlist}{ts}Wait List Confirmation{/ts}{else}{ts}Registration Confirmation{/ts}{/if} - {$event.event_title}', '{contact.email_greeting},
 
 {if $event.confirm_email_text AND (not $isOnWaitlist AND not $isRequireApproval)}
 {$event.confirm_email_text}
@@ -14964,7 +14974,7 @@ You were registered by: {$payer.name}
 </body>
 </html>
 ', @tpl_ovid_event_online_receipt, 1,          0),
-      ('Esdeveniments - Rebut i confirmació d\'incripció (on-line)', '{if $isOnWaitlist}{ts}Wait List Confirmation{/ts}{else}{ts}Registration Confirmation{/ts}{/if} - {$event.event_title}', '{contact.email_greeting},
+      ('Esdeveniments - Rebut i confirmació d\'incripció (en línia)', '{if $isOnWaitlist}{ts}Wait List Confirmation{/ts}{else}{ts}Registration Confirmation{/ts}{/if} - {$event.event_title}', '{contact.email_greeting},
 
 {if $event.confirm_email_text AND (not $isOnWaitlist AND not $isRequireApproval)}
 {$event.confirm_email_text}
@@ -18035,7 +18045,7 @@ or want to inquire about reinstating your registration for this event.{/ts}</p>
 ', @tpl_ovid_friend, 0,          1) ,      
       
       
-      ('Pertinences - Rebuts d\'inscripció i renovació (off-line)', '{if $receiptType EQ \'membership signup\'}
+      ('Pertinences - Rebuts d\'inscripció i renovació (fora de línia)', '{if $receiptType EQ \'membership signup\'}
 {ts}Membership Confirmation and Receipt{/ts}
 {elseif $receiptType EQ \'membership renewal\'}
 {ts}Membership Renewal Confirmation and Receipt{/ts}
@@ -18450,7 +18460,7 @@ or want to inquire about reinstating your registration for this event.{/ts}</p>
 </body>
 </html>
 ', @tpl_ovid_membership_offline_receipt, 1,          0),
-      ('Pertinences - Rebuts d\'inscripció i renovació (off-line)', '{if $receiptType EQ \'membership signup\'}
+      ('Pertinences - Rebuts d\'inscripció i renovació (fora de línia)', '{if $receiptType EQ \'membership signup\'}
 {ts}Membership Confirmation and Receipt{/ts}
 {elseif $receiptType EQ \'membership renewal\'}
 {ts}Membership Renewal Confirmation and Receipt{/ts}
@@ -18867,7 +18877,7 @@ or want to inquire about reinstating your registration for this event.{/ts}</p>
 ', @tpl_ovid_membership_offline_receipt, 0,          1) ,      
       
       
-      ('Pertinences - Rebut (on-line)', '{if $is_pay_later}{ts}Invoice{/ts}{else}{ts}Receipt{/ts}{/if} - {$title}
+      ('Pertinences - Rebut (en línia)', '{if $is_pay_later}{ts}Invoice{/ts}{else}{ts}Receipt{/ts}{/if} - {$title}
 ', '{if $receipt_text}
 {$receipt_text}
 {/if}
@@ -19666,7 +19676,7 @@ or want to inquire about reinstating your registration for this event.{/ts}</p>
 </body>
 </html>
 ', @tpl_ovid_membership_online_receipt, 1,          0),
-      ('Pertinences - Rebut (on-line)', '{if $is_pay_later}{ts}Invoice{/ts}{else}{ts}Receipt{/ts}{/if} - {$title}
+      ('Pertinences - Rebut (en línia)', '{if $is_pay_later}{ts}Invoice{/ts}{else}{ts}Receipt{/ts}{/if} - {$title}
 ', '{if $receipt_text}
 {$receipt_text}
 {/if}
@@ -23135,7 +23145,7 @@ VALUES
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -23321,7 +23331,7 @@ VALUES
 INSERT INTO civicrm_navigation
     ( domain_id, url, label, name, permission, permission_operator, parent_id, is_active, has_separator, weight )
 VALUES
-    ( @domainID, NULL, 'Mailings', 'Mailings', 'access CiviMail,create mailings,approve mailings,schedule mailings', 'OR', NULL, '1', NULL, 50 );
+    ( @domainID, NULL, 'Mailings', 'Mailings', 'access CiviMail,create mailings,approve mailings,schedule mailings,send SMS', 'OR', NULL, '1', NULL, 50 );
 
 SET @mailinglastID:=LAST_INSERT_ID();
 INSERT INTO civicrm_navigation
@@ -23335,8 +23345,8 @@ VALUES
     ( @domainID, 'civicrm/admin/component?reset=1',                         'Headers, Footers, and Automated Messages', 'Headers, Footers, and Automated Messages', 'access CiviMail,administer CiviCRM', 'AND', @mailinglastID, '1', NULL, 6 ),
     ( @domainID, 'civicrm/admin/messageTemplates?reset=1',                  'Message Templates', 'Message Templates',                 'edit message templates', '', @mailinglastID, '1', NULL, 7 ),
     ( @domainID, 'civicrm/admin/options/from_email_address?reset=1', 'From Email Addresses', 'From Email Addresses', 'administer CiviCRM', '', @mailinglastID, '1', 1, 8 ),
-    ( @domainID, 'civicrm/sms/send?reset=1',  'New SMS', 'New SMS', 'administer CiviCRM', NULL, @mailinglastID, '1', NULL, 9 ),
-    ( @domainID, 'civicrm/mailing/browse?reset=1&sms=1', 'Find Mass SMS', 'Find Mass SMS', 'administer CiviCRM', NULL, @mailinglastID, '1', 1, 10 ),
+    ( @domainID, 'civicrm/sms/send?reset=1',  'New SMS', 'New SMS', 'send SMS', NULL, @mailinglastID, '1', NULL, 9 ),
+    ( @domainID, 'civicrm/mailing/browse?reset=1&sms=1', 'Find Mass SMS', 'Find Mass SMS', 'send SMS', NULL, @mailinglastID, '1', 1, 10 ),
     ( @domainID, 'civicrm/a/#/abtest/new',                                  'New A/B Test', 'New A/B Test',                                        'access CiviMail', '', @mailinglastID, '1', NULL, 15 ),
     ( @domainID, 'civicrm/a/#/abtest',                                      'Manage A/B Tests', 'Manage A/B Tests',                                'access CiviMail', '', @mailinglastID, '1', 1, 16 );
 
@@ -23951,5 +23961,4 @@ INSERT INTO `civicrm_report_instance`
     ( `domain_id`, `title`, `report_id`, `description`, `permission`, `form_values`)
 VALUES
     (  @domainID, 'Survey Details', 'survey/detail', 'Detailed report for canvassing, phone-banking, walk lists or other surveys.', 'access CiviReport', 'a:39:{s:6:"fields";a:2:{s:9:"sort_name";s:1:"1";s:6:"result";s:1:"1";}s:22:"assignee_contact_id_op";s:2:"eq";s:25:"assignee_contact_id_value";s:0:"";s:12:"sort_name_op";s:3:"has";s:15:"sort_name_value";s:0:"";s:17:"street_number_min";s:0:"";s:17:"street_number_max";s:0:"";s:16:"street_number_op";s:3:"lte";s:19:"street_number_value";s:0:"";s:14:"street_name_op";s:3:"has";s:17:"street_name_value";s:0:"";s:15:"postal_code_min";s:0:"";s:15:"postal_code_max";s:0:"";s:14:"postal_code_op";s:3:"lte";s:17:"postal_code_value";s:0:"";s:7:"city_op";s:3:"has";s:10:"city_value";s:0:"";s:20:"state_province_id_op";s:2:"in";s:23:"state_province_id_value";a:0:{}s:13:"country_id_op";s:2:"in";s:16:"country_id_value";a:0:{}s:12:"survey_id_op";s:2:"in";s:15:"survey_id_value";a:0:{}s:12:"status_id_op";s:2:"eq";s:15:"status_id_value";s:1:"1";s:11:"custom_1_op";s:2:"in";s:14:"custom_1_value";a:0:{}s:11:"custom_2_op";s:2:"in";s:14:"custom_2_value";a:0:{}s:17:"custom_3_relative";s:1:"0";s:13:"custom_3_from";s:0:"";s:11:"custom_3_to";s:0:"";s:11:"description";s:75:"Detailed report for canvassing, phone-banking, walk lists or other surveys.";s:13:"email_subject";s:0:"";s:8:"email_to";s:0:"";s:8:"email_cc";s:0:"";s:10:"permission";s:17:"access CiviReport";s:6:"groups";s:0:"";s:9:"domain_id";i:1;}');
-
-UPDATE civicrm_domain SET version = '4.7.31';
+UPDATE civicrm_domain SET version = '5.1.2';

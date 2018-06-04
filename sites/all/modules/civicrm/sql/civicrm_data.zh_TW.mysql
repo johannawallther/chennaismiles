@@ -1,7 +1,7 @@
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -297,7 +297,7 @@ INSERT INTO civicrm_country (id, name,iso_code,region_id,is_province_abbreviated
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -4405,11 +4405,22 @@ INSERT INTO civicrm_state_province (id, country_id, abbreviation, name) VALUES
 (NULL, 1018, "08", "Saint Michael"),
 (NULL, 1018, "09", "Saint Peter"),
 (NULL, 1018, "10", "Saint Philip"),
-(NULL, 1018, "11", "Saint Thomas");
+(NULL, 1018, "11", "Saint Thomas"),
+
+-- CRM-21837 - Missing states for Gabon
+(NULL, 1080, "01", "Estuaire"),
+(NULL, 1080, "02", "Haut-Ogooué"),
+(NULL, 1080, "03", "Moyen-Ogooué"),
+(NULL, 1080, "04", "Ngounié"),
+(NULL, 1080, "05", "Nyanga"),
+(NULL, 1080, "06", "Ogooué-Ivindo"),
+(NULL, 1080, "07", "Ogooué-Lolo"),
+(NULL, 1080, "08", "Ogooué-Maritime"),
+(NULL, 1080, "09", "Woleu-Ntem");
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -4619,11 +4630,10 @@ INSERT INTO civicrm_currency (id, name, symbol, numeric_code, full_name) VALUES
 (183, "YER",  "﷼", "886", "Yemeni Rial"),
 (184, "ZMK", NULL, "894", "Zambian Kwacha"),
 (185, "ZWD", "Z$", "716", "Zimbabwe Dollar");
-
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -4973,7 +4983,7 @@ VALUES
    (@option_group_id_act, 'Update Recurring Contribution Billing Details',      38, 'Update Recurring Contribution Billing Details', NULL,1, 0, 38, '', 0, 1, 1, @contributeCompId, NULL, NULL),
    (@option_group_id_act, 'Update Recurring Contribution',      39, 'Update Recurring Contribution', NULL,1, 0, 39, '', 0, 1, 1, @contributeCompId, NULL, NULL),
 
-   (@option_group_id_act, 'Reminder Sent',                40, 'Reminder Sent', NULL, 1, 0, 40, '', 0, 1, 1, NULL, NULL, NULL),
+   (@option_group_id_act, '已傳送提示',                40, 'Reminder Sent', NULL, 1, 0, 40, '', 0, 1, 1, NULL, NULL, NULL),
 
  -- Activity Types for Financial Transactions Batch
    (@option_group_id_act, 'Export Accounting Batch', 41, 'Export Accounting Batch', NULL, 1, 0, 41, 'Export Accounting Batch', 0, 1, 1, @contributeCompId, NULL, NULL),
@@ -5208,7 +5218,7 @@ VALUES
   (@option_group_id_report , '步行/電話名單報表',                'walklist',                       'CRM_Report_Form_Walklist_Walklist',                       NULL, 0, NULL, 4,  'Provides a detailed report for your walk/phonelist for targeted contacts', 0, 0, 0, NULL, NULL, NULL),
   (@option_group_id_report , '目前的員工報表',                 'contact/currentEmployer',        'CRM_Report_Form_Contact_CurrentEmployer',        NULL, 0, NULL, 5,  '透過加入日期的詳細細節，提供詳細的雇主與僱員關係列表。', 0, 0, 1, NULL, NULL, NULL),
   (@option_group_id_report , 'Contribution Summary Report',             'contribute/summary',             'CRM_Report_Form_Contribute_Summary',             NULL, 0, NULL, 6,  'Groups and totals contributions by criteria including contact, time period, financial type, contributor location, etc.', 0, 0, 1, @contributeCompId, NULL, NULL),
-  (@option_group_id_report , 'Contribution Detail Report',              'contribute/detail',              'CRM_Report_Form_Contribute_Detail',              NULL, 0, NULL, 7,  'Lists specific contributions by criteria including contact, time period, financial type, contributor location, etc. Contribution summary report points to this report for contribution details.', 0, 0, 1, @contributeCompId, NULL, NULL),
+  (@option_group_id_report , '捐款詳細報表',              'contribute/detail',              'CRM_Report_Form_Contribute_Detail',              NULL, 0, NULL, 7,  'Lists specific contributions by criteria including contact, time period, financial type, contributor location, etc. Contribution summary report points to this report for contribution details.', 0, 0, 1, @contributeCompId, NULL, NULL),
   (@option_group_id_report , 'Repeat Contributions Report',             'contribute/repeat',              'CRM_Report_Form_Contribute_Repeat',              NULL, 0, NULL, 8,  'Given two date ranges, shows contacts who contributed in both the date ranges with the amount contributed in each and the percentage increase / decrease.', 0, 0, 1, @contributeCompId, NULL, NULL),
   (@option_group_id_report , 'Contributions by Organization Report',    'contribute/organizationSummary', 'CRM_Report_Form_Contribute_OrganizationSummary', NULL, 0, NULL, 9,  'Displays a detailed list of contributions grouped by organization, which includes contributions made by employees for the organisation.', 0, 0, 1, @contributeCompId, NULL, NULL),
   (@option_group_id_report , 'Contributions by Household Report',       'contribute/householdSummary',    'CRM_Report_Form_Contribute_HouseholdSummary',    NULL, 0, NULL, 10, 'Displays a detailed list of contributions grouped by household which includes contributions made by members of the household.', 0, 0, 1, @contributeCompId, NULL, NULL),
@@ -5300,7 +5310,7 @@ VALUES
   (@option_group_id_mt, '匯出認捐',      11, 'Export Pledge',       NULL, 0, 0,   11, NULL, 0, 1, 1, NULL, NULL, NULL),
   (@option_group_id_mt, '匯出個案',        12, 'Export Case',         NULL, 0, 0,   12, NULL, 0, 1, 1, NULL, NULL, NULL),
   (@option_group_id_mt, '匯出補助',       13, 'Export Grant',        NULL, 0, 0,   13, NULL, 0, 1, 1, NULL, NULL, NULL),
-  (@option_group_id_mt, 'Export Activity',    14, 'Export Activity',     NULL, 0, 0,   14, NULL, 0, 1, 1, NULL, NULL, NULL),
+  (@option_group_id_mt, '匯入活動',    14, 'Export Activity',     NULL, 0, 0,   14, NULL, 0, 1, 1, NULL, NULL, NULL),
 
   (@option_group_id_fu, '日'    , 'day'  ,    'day',  NULL, 0, NULL, 1, NULL, 0, 1, 1, NULL, NULL, NULL),
   (@option_group_id_fu, 'week'   , 'week' ,   'week',  NULL, 0, NULL, 2, NULL, 0, 1, 1, NULL, NULL, NULL),
@@ -5582,7 +5592,7 @@ VALUES
 (@option_group_id_env, 'Development', 'Development', 'Development', NULL, NULL, 0, 3, 'Development Environment', 0, 1, 1, NULL, NULL, NULL),
 
 -- Relative Date Filters
-   (@option_group_id_date_filter, 'Today', 'this.day', 'this.day', NULL, NULL, NULL,1, NULL, 0, 0, 1, NULL, NULL, NULL),
+   (@option_group_id_date_filter, '今天', 'this.day', 'this.day', NULL, NULL, NULL,1, NULL, 0, 0, 1, NULL, NULL, NULL),
    (@option_group_id_date_filter, 'This week', 'this.week', 'this.week', NULL, NULL, NULL,2, NULL, 0, 0, 1, NULL, NULL, NULL),
    (@option_group_id_date_filter, 'This calendar month', 'this.month', 'this.month', NULL, NULL, NULL,3, NULL, 0, 0, 1, NULL, NULL, NULL),
    (@option_group_id_date_filter, 'This quarter', 'this.quarter', 'this.quarter', NULL, NULL, NULL,4, NULL, 0, 0, 1, NULL, NULL, NULL),
@@ -5601,7 +5611,7 @@ VALUES
    (@option_group_id_date_filter, 'Last 12 months including today', 'ending.year', 'ending.year', NULL, NULL, NULL,17, NULL, 0, 0, 1, NULL, NULL, NULL),
    (@option_group_id_date_filter, 'Last 2 years including today', 'ending_2.year', 'ending_2.year', NULL, NULL, NULL,18, NULL, 0, 0, 1, NULL, NULL, NULL),
    (@option_group_id_date_filter, 'Last 3 years including today', 'ending_3.year', 'ending_3.year', NULL, NULL, NULL,19, NULL, 0, 0, 1, NULL, NULL, NULL),
-   (@option_group_id_date_filter, 'Tomorrow', 'starting.day', 'starting.day', NULL, NULL, NULL,20, NULL, 0, 0, 1, NULL, NULL, NULL),
+   (@option_group_id_date_filter, '明天', 'starting.day', 'starting.day', NULL, NULL, NULL,20, NULL, 0, 0, 1, NULL, NULL, NULL),
    (@option_group_id_date_filter, 'Next week', 'next.week', 'next.week', NULL, NULL, NULL,21, NULL, 0, 0, 1, NULL, NULL, NULL),
    (@option_group_id_date_filter, 'Next calendar month', 'next.month', 'next.month', NULL, NULL, NULL,22, NULL, 0, 0, 1, NULL, NULL, NULL),
    (@option_group_id_date_filter, 'Next quarter', 'next.quarter', 'next.quarter', NULL, NULL, NULL,23, NULL, 0, 0, 1, NULL, NULL, NULL),
@@ -5714,7 +5724,7 @@ VALUES
 INSERT INTO `civicrm_option_group`
   (`name`, `title`, `description`, `is_reserved`, `is_active`)
 VALUES
-  ('languages', 'Languages', 'List of Languages', 1, 1);
+  ('languages', 'Languages', '語言列表', 1, 1);
 
 SELECT @option_group_id_languages      := max(id) from civicrm_option_group where name = 'languages';
 
@@ -5722,7 +5732,7 @@ SELECT @counter := 0;
 INSERT INTO civicrm_option_value
   (option_group_id, is_default, is_active, name, value, label, weight)
 VALUES
-  (@option_group_id_languages, 0, 0, 'ab_GE', 'ab', 'Abkhaz', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ab_GE', 'ab', '阿布哈茲語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'aa_ET', 'aa', 'Afar', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'af_ZA', 'af', 'Afrikaans', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ak_GH', 'ak', 'Akan', @counter := @counter + 1),
@@ -5741,36 +5751,36 @@ VALUES
   (@option_group_id_languages, 0, 0, 'eu_ES', 'eu', 'Basque', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'be_BY', 'be', 'Belarusian', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'bn_BD', 'bn', 'Bengali', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'bh_IN', 'bh', 'Bihari', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'bi_VU', 'bi', 'Bislama', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'bs_BA', 'bs', 'Bosnian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'br_FR', 'br', 'Breton', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'bg_BG', 'bg', 'Bulgarian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'my_MM', 'my', 'Burmese', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'ca_ES', 'ca', 'Catalan; Valencian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ch_GU', 'ch', 'Chamorro', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ce_RU', 'ce', 'Chechen', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'bh_IN', 'bh', '比哈里语', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'bi_VU', 'bi', ' 比斯拉馬語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'bs_BA', 'bs', '波斯尼亞語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'br_FR', 'br', '布列塔尼語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'bg_BG', 'bg', '保加利亞語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'my_MM', 'my', '緬甸語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'ca_ES', 'ca', '加泰隆尼亞語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ch_GU', 'ch', ' 查莫羅語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ce_RU', 'ce', '車臣語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ny_MW', 'ny', 'Chichewa; Chewa; Nyanja', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'zh_CN', 'zh', 'Chinese (China)', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'zh_TW', 'zh', 'Chinese (Taiwan)', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'cv_RU', 'cv', 'Chuvash', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'zh_TW', 'zh', '中文(台灣)', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'cv_RU', 'cv', '楚瓦什語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'kw_GB', 'kw', 'Cornish', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'co_FR', 'co', 'Corsican', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'cr_CA', 'cr', 'Cree', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'hr_HR', 'hr', 'Croatian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'cs_CZ', 'cs', 'Czech', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'co_FR', 'co', '科西嘉語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'cr_CA', 'cr', '平原克里語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'hr_HR', 'hr', '塞爾維亞語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'cs_CZ', 'cs', '捷克語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'da_DK', 'da', 'Danish', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'dv_MV', 'dv', 'Divehi; Dhivehi; Maldivian;', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'nl_NL', 'nl', 'Dutch', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'dz_BT', 'dz', 'Dzongkha', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'en_AU', 'en', 'English (Australia)', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'en_CA', 'en', 'English (Canada)', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'en_GB', 'en', 'English (United Kingdom)', @counter := @counter + 1),
-  (@option_group_id_languages, 1, 1, 'en_US', 'en', 'English (United States)', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'eo_XX', 'eo', 'Esperanto', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'et_EE', 'et', 'Estonian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ee_GH', 'ee', 'Ewe', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'fo_FO', 'fo', 'Faroese', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'en_GB', 'en', '英文(英國)', @counter := @counter + 1),
+  (@option_group_id_languages, 1, 1, 'en_US', 'en', '英文(美國)', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'eo_XX', 'eo', '世界語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'et_EE', 'et', '愛沙尼亞語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ee_GH', 'ee', '埃維語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'fo_FO', 'fo', '法羅語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'fj_FJ', 'fj', 'Fijian', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'fi_FI', 'fi', 'Finnish', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'fr_CA', 'fr', 'French (Canada)', @counter := @counter + 1),
@@ -5783,31 +5793,31 @@ VALUES
   (@option_group_id_languages, 0, 1, 'el_GR', 'el', 'Greek, Modern', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'gn_PY', 'gn', 'Guarani­', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'gu_IN', 'gu', 'Gujarati', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ht_HT', 'ht', 'Haitian; Haitian Creole', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ha_NG', 'ha', 'Hausa', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ht_HT', 'ht', '海地克里奧爾語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ha_NG', 'ha', '豪薩語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'he_IL', 'he', 'Hebrew (modern)', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'hz_NA', 'hz', 'Herero', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'hi_IN', 'hi', 'Hindi', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ho_PG', 'ho', 'Hiri Motu', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'hu_HU', 'hu', 'Hungarian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ia_XX', 'ia', 'Interlingua', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'id_ID', 'id', 'Indonesian', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ho_PG', 'ho', '希里摩圖語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'hu_HU', 'hu', '匈牙利語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ia_XX', 'ia', '因特語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'id_ID', 'id', ' 印尼語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ie_XX', 'ie', 'Interlingue', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ga_IE', 'ga', 'Irish', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ig_NG', 'ig', 'Igbo', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ik_US', 'ik', 'Inupiaq', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'io_XX', 'io', 'Ido', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'is_IS', 'is', 'Icelandic', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'it_IT', 'it', 'Italian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'iu_CA', 'iu', 'Inuktitut', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'ja_JP', 'ja', 'Japanese', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'jv_ID', 'jv', 'Javanese', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'kl_GL', 'kl', 'Kalaallisut, Greenlandic', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'kn_IN', 'kn', 'Kannada', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'kr_NE', 'kr', 'Kanuri', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ks_IN', 'ks', 'Kashmiri', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'kk_KZ', 'kk', 'Kazakh', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'km_KH', 'km', 'Khmer', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ga_IE', 'ga', '愛爾蘭語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ig_NG', 'ig', '伊博語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ik_US', 'ik', '因紐皮雅特語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'io_XX', 'io', '伊多語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'is_IS', 'is', '冰島語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'it_IT', 'it', '義大利語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'iu_CA', 'iu', '伊努克提圖特語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'ja_JP', 'ja', '日語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'jv_ID', 'jv', '爪哇語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'kl_GL', 'kl', '格陵蘭語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'kn_IN', 'kn', '康納達語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'kr_NE', 'kr', '卡努里語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ks_IN', 'ks', '克什米爾語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'kk_KZ', 'kk', '哈薩克語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'km_KH', 'km', '高棉語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ki_KE', 'ki', 'Kikuyu, Gikuyu', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'rw_RW', 'rw', 'Kinyarwanda', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ky_KG', 'ky', 'Kirghiz, Kyrgyz', @counter := @counter + 1),
@@ -5816,30 +5826,30 @@ VALUES
   (@option_group_id_languages, 0, 0, 'ko_KR', 'ko', 'Korean', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ku_IQ', 'ku', 'Kurdish', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'kj_NA', 'kj', 'Kwanyama, Kuanyama', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'la_VA', 'la', 'Latin', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'lb_LU', 'lb', 'Luxembourgish, Letzeburgesch', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'lg_UG', 'lg', 'Luganda', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'la_VA', 'la', '拉丁語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'lb_LU', 'lb', '盧森堡語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'lg_UG', 'lg', '盧干達語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'li_NL', 'li', 'Limburgish, Limburgan, Limburger', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ln_CD', 'ln', 'Lingala', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'lo_LA', 'lo', 'Lao', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'lt_LT', 'lt', 'Lithuanian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'lu_CD', 'lu', 'Luba-Katanga', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'lv_LV', 'lv', 'Latvian', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'lt_LT', 'lt', '立陶宛語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'lu_CD', 'lu', '盧巴語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'lv_LV', 'lv', '拉脫維亞語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'gv_IM', 'gv', 'Manx', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'mk_MK', 'mk', 'Macedonian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'mg_MG', 'mg', 'Malagasy', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ms_MY', 'ms', 'Malay', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ml_IN', 'ml', 'Malayalam', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'mt_MT', 'mt', 'Maltese', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'mk_MK', 'mk', '馬其頓語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'mg_MG', 'mg', '馬拉加斯語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ms_MY', 'ms', '馬來語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ml_IN', 'ml', '馬拉雅拉姆語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'mt_MT', 'mt', '馬爾他語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'mi_NZ', 'mi', 'Māori', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'mr_IN', 'mr', 'Marathi', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'mr_IN', 'mr', '馬拉地語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'mh_MH', 'mh', 'Marshallese', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'mn_MN', 'mn', 'Mongolian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'na_NR', 'na', '諾魯', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'mn_MN', 'mn', '蒙古語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'na_NR', 'na', '瑙魯語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'nv_US', 'nv', 'Navajo, Navaho', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'nb_NO', 'nb', 'Norwegian BokmÃ¥l', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'nd_ZW', 'nd', 'North Ndebele', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ne_NP', 'ne', 'Nepali', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ne_NP', 'ne', '尼泊爾語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ng_NA', 'ng', 'Ndonga', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'nn_NO', 'nn', 'Norwegian Nynorsk', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'no_NO', 'no', 'Norwegian', @counter := @counter + 1),
@@ -5849,16 +5859,16 @@ VALUES
   (@option_group_id_languages, 0, 0, 'oj_CA', 'oj', 'Ojibwa', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'cu_BG', 'cu', 'Old Church Slavonic, Church Slavic, Church Slavonic, Old Bulgarian, Old Slavonic', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'om_ET', 'om', 'Oromo', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'or_IN', 'or', 'Oriya', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'os_GE', 'os', 'Ossetian, Ossetic', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'pa_IN', 'pa', 'Panjabi, Punjabi', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'pi_KH', 'pi', 'Pali', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'or_IN', 'or', '奧里亞語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'os_GE', 'os', '奧塞梯語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'pa_IN', 'pa', '旁遮普語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'pi_KH', 'pi', '巴利語 ', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'fa_IR', 'fa', 'Persian (Iran)', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'pl_PL', 'pl', 'Polish', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'pl_PL', 'pl', '波蘭語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ps_AF', 'ps', 'Pashto, Pushto', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'pt_BR', 'pt', 'Portuguese (Brazil)', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'pt_PT', 'pt', 'Portuguese (Portugal)', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'qu_PE', 'qu', 'Quechua', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'qu_PE', 'qu', '克丘亞語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'rm_CH', 'rm', 'Romansh', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'rn_BI', 'rn', 'Kirundi', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'ro_RO', 'ro', 'Romanian, Moldavian, Moldovan', @counter := @counter + 1),
@@ -5870,8 +5880,8 @@ VALUES
   (@option_group_id_languages, 0, 0, 'sm_WS', 'sm', 'Samoan', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'sg_CF', 'sg', 'Sango', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'sr_RS', 'sr', 'Serbian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'gd_GB', 'gd', 'Scottish Gaelic; Gaelic', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'sn_ZW', 'sn', 'Shona', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'gd_GB', 'gd', '蘇格蘭蓋爾語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'sn_ZW', 'sn', '修納語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'si_LK', 'si', 'Sinhala, Sinhalese', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'sk_SK', 'sk', 'Slovak', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'sl_SI', 'sl', 'Slovene', @counter := @counter + 1),
@@ -5885,34 +5895,34 @@ VALUES
   (@option_group_id_languages, 0, 0, 'ss_ZA', 'ss', 'Swati', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'sv_SE', 'sv', 'Swedish', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ta_IN', 'ta', 'Tamil', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'te_IN', 'te', 'Telugu', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'te_IN', 'te', '泰盧固語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'tg_TJ', 'tg', 'Tajik', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'th_TH', 'th', 'Thai', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ti_ET', 'ti', 'Tigrinya', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'bo_CN', 'bo', 'Tibetan Standard, Tibetan, Central', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'tk_TM', 'tk', 'Turkmen', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'th_TH', 'th', '泰語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ti_ET', 'ti', '提格利尼亞語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'bo_CN', 'bo', '藏語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'tk_TM', 'tk', '土庫曼語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'tl_PH', 'tl', 'Tagalog', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'tn_ZA', 'tn', 'Tswana', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'tn_ZA', 'tn', '茨瓦納語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'to_TO', 'to', 'Tonga (Tonga Islands)', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'tr_TR', 'tr', 'Turkish', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'tr_TR', 'tr', '土耳其語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ts_ZA', 'ts', 'Tsonga', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'tt_RU', 'tt', 'Tatar', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'tw_GH', 'tw', 'Twi', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ty_PF', 'ty', 'Tahitian', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'ug_CN', 'ug', 'Uighur, Uyghur', @counter := @counter + 1),
   (@option_group_id_languages, 0, 1, 'uk_UA', 'uk', 'Ukrainian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'ur_PK', 'ur', 'Urdu', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'uz_UZ', 'uz', 'Uzbek', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 've_ZA', 've', 'Venda', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 1, 'vi_VN', 'vi', 'Vietnamese', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'ur_PK', 'ur', '烏爾都語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'uz_UZ', 'uz', '烏茲別克語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 've_ZA', 've', '文達語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 1, 'vi_VN', 'vi', '越南語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'vo_XX', 'vo', 'Volapük', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'wa_BE', 'wa', 'Walloon', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'cy_GB', 'cy', 'Welsh', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'wo_SN', 'wo', 'Wolof', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'fy_NL', 'fy', 'Western Frisian', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'xh_ZA', 'xh', 'Xhosa', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'yi_US', 'yi', 'Yiddish', @counter := @counter + 1),
-  (@option_group_id_languages, 0, 0, 'yo_NG', 'yo', 'Yoruba', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'cy_GB', 'cy', '威爾斯語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'wo_SN', 'wo', '沃洛夫語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'fy_NL', 'fy', '西弗里斯語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'xh_ZA', 'xh', '科薩語', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'yi_US', 'yi', '意第绪语', @counter := @counter + 1),
+  (@option_group_id_languages, 0, 0, 'yo_NG', 'yo', '約魯巴語', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'za_CN', 'za', 'Zhuang, Chuang', @counter := @counter + 1),
   (@option_group_id_languages, 0, 0, 'zu_ZA', 'zu', 'Zulu', @counter := @counter + 1);
 -- /*******************************************************
@@ -6462,7 +6472,7 @@ INSERT INTO `civicrm_contact_type`
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -23135,7 +23145,7 @@ VALUES
 -- +--------------------------------------------------------------------+
 -- | CiviCRM version 4.7                                                |
 -- +--------------------------------------------------------------------+
--- | Copyright CiviCRM LLC (c) 2004-2017                                |
+-- | Copyright CiviCRM LLC (c) 2004-2018                                |
 -- +--------------------------------------------------------------------+
 -- | This file is a part of CiviCRM.                                    |
 -- |                                                                    |
@@ -23177,7 +23187,7 @@ INSERT INTO `civicrm_dashboard`
     ( @domainID, 'getting-started', 'CiviCRM Resources', 'civicrm/dashlet/getting-started?reset=1', 'access CiviCRM', NULL, 1, 'civicrm/dashlet/getting-started?reset=1&context=dashletFullscreen', 1, 7200),
 
     ( @domainID, 'activity', '任務', 'civicrm/dashlet/activity?reset=1', 'access CiviCRM', NULL, 1, 'civicrm/dashlet/activity?reset=1&context=dashletFullscreen', 1, 7200),
-    ( @domainID, 'myCases', 'My Cases', 'civicrm/dashlet/myCases?reset=1', 'access my cases and activities', NULL, 1, 'civicrm/dashlet/myCases?reset=1&context=dashletFullscreen', 1, 60),
+    ( @domainID, 'myCases', '我的個案', 'civicrm/dashlet/myCases?reset=1', 'access my cases and activities', NULL, 1, 'civicrm/dashlet/myCases?reset=1&context=dashletFullscreen', 1, 60),
     ( @domainID, 'allCases', 'All Cases', 'civicrm/dashlet/allCases?reset=1', 'access all cases and activities', NULL, 1, 'civicrm/dashlet/allCases?reset=1&context=dashletFullscreen', 1, 60),
     ( @domainID, 'casedashboard', 'Case Dashboard Dashlet', 'civicrm/dashlet/casedashboard?reset=1', 'access my cases and activities,access all cases and activities', 'OR', 1, 'civicrm/dashlet/casedashboard?reset=1&context=dashletFullscreen', 1, 60);
 
@@ -23321,7 +23331,7 @@ VALUES
 INSERT INTO civicrm_navigation
     ( domain_id, url, label, name, permission, permission_operator, parent_id, is_active, has_separator, weight )
 VALUES
-    ( @domainID, NULL, 'Mailings', 'Mailings', 'access CiviMail,create mailings,approve mailings,schedule mailings', 'OR', NULL, '1', NULL, 50 );
+    ( @domainID, NULL, 'Mailings', 'Mailings', 'access CiviMail,create mailings,approve mailings,schedule mailings,send SMS', 'OR', NULL, '1', NULL, 50 );
 
 SET @mailinglastID:=LAST_INSERT_ID();
 INSERT INTO civicrm_navigation
@@ -23335,8 +23345,8 @@ VALUES
     ( @domainID, 'civicrm/admin/component?reset=1',                         'Headers, Footers, and Automated Messages', 'Headers, Footers, and Automated Messages', 'access CiviMail,administer CiviCRM', 'AND', @mailinglastID, '1', NULL, 6 ),
     ( @domainID, 'civicrm/admin/messageTemplates?reset=1',                  'Message Templates', 'Message Templates',                 'edit message templates', '', @mailinglastID, '1', NULL, 7 ),
     ( @domainID, 'civicrm/admin/options/from_email_address?reset=1', 'From Email Addresses', 'From Email Addresses', 'administer CiviCRM', '', @mailinglastID, '1', 1, 8 ),
-    ( @domainID, 'civicrm/sms/send?reset=1',  'New SMS', 'New SMS', 'administer CiviCRM', NULL, @mailinglastID, '1', NULL, 9 ),
-    ( @domainID, 'civicrm/mailing/browse?reset=1&sms=1', 'Find Mass SMS', 'Find Mass SMS', 'administer CiviCRM', NULL, @mailinglastID, '1', 1, 10 ),
+    ( @domainID, 'civicrm/sms/send?reset=1',  'New SMS', 'New SMS', 'send SMS', NULL, @mailinglastID, '1', NULL, 9 ),
+    ( @domainID, 'civicrm/mailing/browse?reset=1&sms=1', 'Find Mass SMS', 'Find Mass SMS', 'send SMS', NULL, @mailinglastID, '1', 1, 10 ),
     ( @domainID, 'civicrm/a/#/abtest/new',                                  'New A/B Test', 'New A/B Test',                                        'access CiviMail', '', @mailinglastID, '1', NULL, 15 ),
     ( @domainID, 'civicrm/a/#/abtest',                                      'Manage A/B Tests', 'Manage A/B Tests',                                'access CiviMail', '', @mailinglastID, '1', 1, 16 );
 
@@ -23951,5 +23961,4 @@ INSERT INTO `civicrm_report_instance`
     ( `domain_id`, `title`, `report_id`, `description`, `permission`, `form_values`)
 VALUES
     (  @domainID, 'Survey Details', 'survey/detail', 'Detailed report for canvassing, phone-banking, walk lists or other surveys.', 'access CiviReport', 'a:39:{s:6:"fields";a:2:{s:9:"sort_name";s:1:"1";s:6:"result";s:1:"1";}s:22:"assignee_contact_id_op";s:2:"eq";s:25:"assignee_contact_id_value";s:0:"";s:12:"sort_name_op";s:3:"has";s:15:"sort_name_value";s:0:"";s:17:"street_number_min";s:0:"";s:17:"street_number_max";s:0:"";s:16:"street_number_op";s:3:"lte";s:19:"street_number_value";s:0:"";s:14:"street_name_op";s:3:"has";s:17:"street_name_value";s:0:"";s:15:"postal_code_min";s:0:"";s:15:"postal_code_max";s:0:"";s:14:"postal_code_op";s:3:"lte";s:17:"postal_code_value";s:0:"";s:7:"city_op";s:3:"has";s:10:"city_value";s:0:"";s:20:"state_province_id_op";s:2:"in";s:23:"state_province_id_value";a:0:{}s:13:"country_id_op";s:2:"in";s:16:"country_id_value";a:0:{}s:12:"survey_id_op";s:2:"in";s:15:"survey_id_value";a:0:{}s:12:"status_id_op";s:2:"eq";s:15:"status_id_value";s:1:"1";s:11:"custom_1_op";s:2:"in";s:14:"custom_1_value";a:0:{}s:11:"custom_2_op";s:2:"in";s:14:"custom_2_value";a:0:{}s:17:"custom_3_relative";s:1:"0";s:13:"custom_3_from";s:0:"";s:11:"custom_3_to";s:0:"";s:11:"description";s:75:"Detailed report for canvassing, phone-banking, walk lists or other surveys.";s:13:"email_subject";s:0:"";s:8:"email_to";s:0:"";s:8:"email_cc";s:0:"";s:10:"permission";s:17:"access CiviReport";s:6:"groups";s:0:"";s:9:"domain_id";i:1;}');
-
-UPDATE civicrm_domain SET version = '4.7.31';
+UPDATE civicrm_domain SET version = '5.1.2';
